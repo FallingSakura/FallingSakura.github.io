@@ -1441,10 +1441,9 @@ pre code {
   width: 100%;
 }
 .with-love {
-  color: #fff;
+  color: #f00;
   display: inline-block;
   margin: 0 5px;
-  animation: icon-animate 1.33s ease-in-out infinite;
 }
 @keyframes icon-animate {
   0%, 100% {
@@ -2470,7 +2469,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #8cffff;
+  background: #e9cc0f;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
