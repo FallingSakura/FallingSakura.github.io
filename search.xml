@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>BlogTest</title>
+    <url>/2023/02/19/Hexo/</url>
+    <content><![CDATA[<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302190844939.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>在DATA文件夹内 git bash</p>
+<p>hexo g生成静态网页，然后输入hexo s可以本地预览效果，最后输入hexo
+d上传到github上。</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302190912277.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302190920633.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302190921495.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/02/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>My-first-Blog</title>
+    <url>/2023/02/19/My-first-Blog/</url>
+    <content><![CDATA[<p><strong>My First Blog:</strong></p>
+<p>耗时：6h</p>
+<p>现在还什么都没有</p>
+<p>随便看看吧</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Graph</title>
+    <url>/2023/02/26/%E5%9B%BE%E8%AE%BA/</url>
+    <content><![CDATA[<h1 id="基础概念">基础概念</h1>
+<ul>
+<li>度（Degree）：一个顶点上的度是指与该顶点相关联的边的条数，顶点<span
+class="math inline">\(v\)</span>的度记作<span
+class="math inline">\(d(v)\)</span>。</li>
+<li>入度（In-degree）和出度（Out-degree）：对于有向图来说，一个顶点的度可细分为入度和出度。顶点的入度是指与其关联的各边之中，以其为终点的边数；出度则是相对的概念，指以该顶点为起点的边数。</li>
+<li>自环（Loop）：若一条边的两个顶点为同一个顶点，则此边称之为自环</li>
+<li>路径（Path）：在图上随便走，走出来的就是路径</li>
+<li>环：起点=终点的路径</li>
+<li>简单路径：每个点至多走一次的路径（点不能重复，边可以）</li>
+<li>简单环：去掉起点终点后变成简单路径（起点终点可以走两遍）</li>
+</ul>
+<h1 id="特殊的图">特殊的图</h1>
+<ul>
+<li>树：无环，无向，连通 | n个点的树n-1条边
+无环，无向，不连通？——森林（每个连通块都是一个树）
+无环，连通，有向？——有向图的树
+<ul>
+<li>外向树</li>
+<li><figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302181130889.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure></li>
+<li>内向树</li>
+<li><img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302181131257.png"
+alt="image.png" /> 有环，无向，连通？——章鱼图/基环树
+章鱼（n条边）变树：断掉环上的一条边 树变章鱼：任意连接一组边
+扩展——树形DP <strong>没有上司的舞会plus</strong> ：</li>
+<li><img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302181139263.png"
+alt="image.png" /> 不可断环为树（数据范围）
+1.对环上的每一个点做一次树形DP 2.环形DP</li>
+<li><img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302181148138.png"
+alt="image.png" /> 代表选到环上第几个点/第i个点选没选/第1个点选没选</li>
+<li><figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302181150117.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure></li>
+</ul></li>
+</ul>
+<p>如何找环呢？</p>
+<p>从根节点开始dfs</p>
+<p>直到从某一个点走到了它的祖先</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302191854777.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>如果dfs途中找到了这个点的祖先</p>
+<p>那么就反向跳不断地跳到他的父亲</p>
+<p>直到找到这个点</p>
+<p>那么经历的所有点便组成了一个环</p>
+<ul>
+<li>仙人掌图
+<ul>
+<li>边仙人掌图：把每一个点都换成一个环，边是用来连接不同的环的</li>
+<li>点仙人掌图：用点连接的仙人掌图</li>
+<li>一般也是DP题</li>
+<li>做法：树形DP环形DP交替进行：树形——环形——树形</li>
+<li><figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302191918711.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure></li>
+</ul></li>
+<li>有向无环图（DAG）：
+<ul>
+<li>DP：状态看作点，转移看作边，其实DP就是DAG</li>
+</ul></li>
+<li>二分图（无向）：（染色问题：一个点和它相邻的点的颜色一定不同的图）
+<ul>
+<li>图分为左边和右边两个部分</li>
+<li>所有边都在中间</li>
+<li>左边右边内部都没有边</li>
+<li><strong>树是二分图</strong></li>
+<li>只需要把深度为奇数的点放在左边</li>
+<li>深度为偶数的点放在右边（没有上司的舞会）</li>
+<li>那么边一定全在中间</li>
+<li>什么图不是二分图呢？</li>
+<li>有奇环的图就一定不是，没有奇环就是 ^ 环上的点数是奇数</li>
+<li>代码思路：随便找到一个点把它染成白色，再染相邻的点</li>
+<li>结束？</li>
+<li>都染完了</li>
+<li>染完以后发现相邻有与自己颜色相同的点，那么就不是二分图</li>
+<li><strong>方格图</strong></li>
+<li><img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302191930716.png"
+alt="image.png" /> 国际象棋的棋盘 二分图不一定连通 # 图的存储</li>
+</ul></li>
+</ul>
+<h2 id="邻接矩阵">邻接矩阵</h2>
+<ul>
+<li>f[i] [j]代表从i到j有边</li>
+<li>好处：询问快，好写</li>
+<li>坏处：空间较大，没有办法处理重边（强连通分量）</li>
+</ul>
+<h2 id="边表链式前向星">边表（链式前向星）</h2>
+<ul>
+<li>建立n个链表</li>
+<li>见<a
+href="https://blog.csdn.net/acdreamers/article/details/16902023">深度理解链式前向星_ACdreamers的博客-CSDN博客_链式前向星</a></li>
+<li><figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302191940590.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure></li>
+<li><figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302191940046.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure></li>
+</ul>
+<h2
+id="既然会存图了那么我们做一下章鱼图dp吧">既然会存图了，那么我们做一下章鱼图DP吧！</h2>
+<ul>
+<li><figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302192113843.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure></li>
+</ul>
+<p>对环上的每一个点做一个树形DP</p>
+<p>保证不要dfs到环上</p>
+<p>做完树形dp后再对环做一个环形dp那么就做完了</p>
+<h1 id="优先队列">优先队列</h1>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302260751219.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302260752062.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302260753691.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<h2 id="pair">Pair</h2>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302260801080.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<h1 id="最短路">最短路</h1>
+<ul>
+<li>单源最短路（一个点到其他所有点）
+<ul>
+<li>三角不等式（dist i,k &lt;= dist i,j+dist j,k）</li>
+<li><figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302192122110.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure></li>
+</ul></li>
+<li>多源最短路（多个点到所有点的最短路——<del>多次单源最短路</del>）</li>
+</ul>
+<h2 id="floyed多源最短路dp">Floyed——多源最短路(DP)</h2>
+<p>^ 边权大于等于0</p>
+<p>F i,j,k代表从j走到k中间经过的每个点编号都小于i</p>
+<p>现在又加了一条边</p>
+<p>这条边可选可不选</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302192129552.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>但是i可以通过枚举解决</p>
+<p>进行一个状态压缩</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302192133270.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<h2 id="dijkstra">Dijkstra</h2>
+<p>^ 边权大于等于0</p>
+<p>复杂度 O(<span class="math inline">\(n^2\)</span>+m)</p>
+<p>1号点到自己距离为0</p>
+<p>其他点为无穷大</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302251148006.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302221108718.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>把一号点放到右边</p>
+<p>进行一个<strong>松弛操作</strong></p>
+<p>“用已知更新未知”</p>
+<p>用已知最短路的点更新未知最短路的点</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302221113575.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>用<strong>dist最短的点</strong>去更新其他点</p>
+<p>边权大于等于0</p>
+<p>假如j走到i</p>
+<p>并且dist[i] &lt; dist[j]</p>
+<p>j不可能走出比dist[i] 还短的路</p>
+<p>因此dist[i] 不会被更新</p>
+<h3 id="dijkstraheap">Dijkstra+heap</h3>
+<p>1.询问最小值</p>
+<p>2.删除最小值</p>
+<p>3.修改某些值</p>
+<p>可以使用堆/线段树</p>
+<p>堆的做法（优先队列）</p>
+<p>(n+m) * log(<span class="math inline">\(n+m\)</span>)</p>
+<p>手写堆：（n+m）* <span class="math inline">\(logn\)</span>
+(斐波那契堆)</p>
+<h2 id="bellman-ford">Bellman-Ford</h2>
+<p>首先，i到j之间最短路一定不超过n-1条边</p>
+<p>所以就得到了如下代码</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302252234022.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>是不是肥肠简单捏</p>
+<p>但是复杂度比dijkstra高</p>
+<p>但是它能处理负边权和负环</p>
+<p>再做一次如果dist减小的话那就是有负环</p>
+<p>如果进行n-1次松弛后还能松弛，那么就有负环</p>
+<p>负环连出去的点最短路径都是负无穷</p>
+<h2 id="spfa">SPFA</h2>
+<p>和BFS不一样的地方就是一个点可能被扔进队列多次</p>
+<p>实际上就是Bellman-Ford的队列优化</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302252245462.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>复杂度O（nm）近似O（m）</p>
+<p>如果边权大于等于零，一定是用Dijkstra+堆</p>
+<p>如果小于零那就是SPFA</p>
+<hr />
+]]></content>
+  </entry>
+</search>
