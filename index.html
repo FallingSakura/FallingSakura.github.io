@@ -224,9 +224,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-02-26 08:27:21 / 修改时间：08:28:55" itemprop="dateCreated datePublished" datetime="2023-02-26T08:27:21+08:00">2023-02-26</time>
+      <time title="创建时间：2023-02-26 08:27:21" itemprop="dateCreated datePublished" datetime="2023-02-26T08:27:21+08:00">2023-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-04 08:36:58" itemprop="dateModified" datetime="2023-03-04T08:36:58+08:00">2023-03-04</time>
     </span>
 
   
@@ -479,7 +485,75 @@ alt="image.png" />
 <p>复杂度O（nm）近似O（m）</p>
 <p>如果边权大于等于零，一定是用Dijkstra+堆</p>
 <p>如果小于零那就是SPFA</p>
+<h2 id="负环判定">负环判定</h2>
+<p>整个环权值的和为负</p>
+<ol type="1">
+<li>做SPFA时候可以多记一个cnt i 代表到这个点的最短路经历了几条边
+如果这个数量超过了n-1，说明有负环</li>
+<li>如果一个点入队超过n次，也说明有负环 入队一次说明被更新一次</li>
+</ol>
+<h1 id="差分约束">差分约束</h1>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302261942380.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302262023262.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>对应最短路中的 d &lt;= dist [i]+w[i]</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302262026480.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>最大值对应最短路</p>
+<p>最小值对应最长路</p>
+<figure>
+<img data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202302262039228.png"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>1：35：54</p>
+<h1 id="树上序列">树上序列</h1>
+<p>树的存储方式： 当作无向图</p>
+<p>概念略</p>
+<p>自己也是自己的祖先</p>
+<h2 id="最近公共祖先问题lca">最近公共祖先问题（LCA）</h2>
+<p>公共祖先：两个点祖先的交集</p>
+<p>最近：最靠下的公共祖先</p>
+<p>最近公共祖先有什么用呢？</p>
+<p>判断两个点怎么走</p>
+<p>那么怎么求呢？</p>
+<p>暴力？</p>
+<p>若假定p1 p2深度相同</p>
+<p>可以让左右两点同时向上跳</p>
+<p>某时刻两点重合</p>
+<p>意味着遇到了公共祖先</p>
+<ol type="1">
+<li>调整深度</li>
+<li>一起跳</li>
+</ol>
+<p>优化：</p>
+<p>慢是因为一步一步跳的</p>
+<p>所以我们可以考虑每次可以每次多跳几步</p>
+<h3 id="倍增求lca">倍增求LCA</h3>
+<p>f [i] [j] 表示从i向上跳<span
+class="math inline">\(2^j\)</span>步会跳到哪个点</p>
+<p>需要预处理</p>
+<p>f[i] [0]=fa[i]</p>
+<p><span class="math inline">\(2^j\)</span>=<span
+class="math inline">\(2^{j-1}\)</span> + <span
+class="math inline">\(2^{j-1}\)</span></p>
+<p>f[i] [j]=f[ [i] [j-1] ] [j-1]</p>
+<p>向上跳2^j-1步再跳一遍</p>
+<p>那么求出来可以有什么用呢？</p>
+<p>求p1和p2之间的边权最小值</p>
+<p>最小值？</p>
 <hr />
+<p>不支持修改操作</p>
 
       
     </div>
