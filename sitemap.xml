@@ -110,6 +110,13 @@
 
   
   <url>
+    <loc>http://vercel.fallingsakura.top/tags/css/</loc>
+    <lastmod>2024-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://vercel.fallingsakura.top/tags/chatgpt/</loc>
     <lastmod>2024-05-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -124,7 +131,7 @@
   </url>
   
   <url>
-    <loc>http://vercel.fallingsakura.top/tags/css/</loc>
+    <loc>http://vercel.fallingsakura.top/tags/javascript/</loc>
     <lastmod>2024-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -137,14 +144,14 @@
     <priority>0.2</priority>
   </url>
   
+
+  
   <url>
-    <loc>http://vercel.fallingsakura.top/tags/javascript/</loc>
+    <loc>http://vercel.fallingsakura.top/categories/Web/</loc>
     <lastmod>2024-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
-  
-
   
   <url>
     <loc>http://vercel.fallingsakura.top/categories/Tool/</loc>
@@ -155,13 +162,6 @@
   
   <url>
     <loc>http://vercel.fallingsakura.top/categories/world/</loc>
-    <lastmod>2024-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://vercel.fallingsakura.top/categories/Web/</loc>
     <lastmod>2024-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
