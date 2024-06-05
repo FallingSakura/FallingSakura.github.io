@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++ Note</title>
+    <url>/edeb27c6.html</url>
+    <content><![CDATA[<h1 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h1>
+<h2 id="枚举类型"><a class="markdownIt-Anchor" href="#枚举类型"></a> 枚举类型</h2>
+<p>枚举 <code>enum</code> 是一种用户定义的类型，它由一组命名的整数常量组成。枚举类型的主要目的是提高代码的可读性和可维护性，特别是在处理一组相关的常量时。</p>
+<p><strong>示例</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">eDirection</span> &#123; STOP = <span class="number">0</span>, LEFT, RIGHT, UP, DOWN &#125;;</span><br><span class="line">eDirection dir;</span><br></pre></td></tr></table></figure></div>
+<p>这里就定义了一个枚举类型 <code>eDirection</code>，和这个类型的一个变量 <code>dir</code>，它只可以取其中这些常量的值。</p>
+<h1 id="库"><a class="markdownIt-Anchor" href="#库"></a> 库</h1>
+<h2 id="conioh"><a class="markdownIt-Anchor" href="#conioh"></a> conio.h</h2>
+<p><strong><code>_kbhit()</code></strong></p>
+<p>如果有键盘输入，则返回 1.</p>
+<p>否则返回 0.</p>
+<p>它是非阻塞的，这点与 <code>_getch()</code> 不同。</p>
+<p><strong><code>_getch()</code></strong></p>
+<p>从控制台中读取单个字符，不需要回车键。</p>
+<p>且读取的字符不会在控制台中显示。</p>
+]]></content>
+      <categories>
+        <category>Back-End</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ChatGPT：开启个人成长的新纪元</title>
     <url>/5a99080f.html</url>
     <content><![CDATA[
@@ -461,6 +487,7 @@
 <p>此处与 <code>visibility: hidden</code> 区分，后者只会使元素不可见，但依旧占据空间。</p>
 <h2 id="position"><a class="markdownIt-Anchor" href="#position"></a> Position</h2>
 <p>CSS <strong><code>position</code></strong> 属性用于指定一个元素在文档中的定位方式。<code>top</code>，<code>right</code>，<code>bottom</code> 和 <code>left</code> 属性则决定了该元素的最终位置。</p>
+<p>而上面那四个位置属性可以简写为 <code>inset</code>，四个参数分别代表 <code>top</code>，<code>right</code>，<code>bottom</code>，<code>left</code>。</p>
 <ul>
 <li><code>static</code>：指定元素为默认布局，无法通过其它元素改变位置。</li>
 <li><code>relative</code>：相对于默认布局的位置偏移。</li>
@@ -526,7 +553,7 @@
 <li><code>text-bottom</code>：父元素的字体底端</li>
 </ul>
 <h2 id="transform"><a class="markdownIt-Anchor" href="#transform"></a> Transform</h2>
-<p>各个操作间用空格隔开。</p>
+<p>各个操作间用<strong>空格</strong>隔开。</p>
 <h3 id="translate"><a class="markdownIt-Anchor" href="#translate"></a> Translate</h3>
 <p>位移。</p>
 <div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transform</span>: <span class="built_in">translate</span>([x-offset], [y-offset]);</span><br></pre></td></tr></table></figure></div>
@@ -577,6 +604,27 @@
 <li><code>ease-out</code></li>
 <li><code>cubic-bezier()</code></li>
 </ul>
+<h2 id="gap"><a class="markdownIt-Anchor" href="#gap"></a> Gap</h2>
+<p>控制 <strong>flex</strong> 和 <strong>grid</strong> 布局中元素的间距。</p>
+<p>当只有一个值时，同时应用于行间距和列间距。</p>
+<p>当有两个值时，第一个值用于行间距，第二个值用于列间距。</p>
+<h2 id="filter"><a class="markdownIt-Anchor" href="#filter"></a> Filter</h2>
+<p><strong><code>hue-rotate(deg)</code></strong></p>
+<p>色相扭曲函数。</p>
+<p><strong><code>blur(px)</code></strong></p>
+<p>高斯模糊。</p>
+<p><strong><code>brightness(%)</code></strong></p>
+<p>亮度。</p>
+<p><strong><code>contrast(%)</code></strong></p>
+<p>对比度。</p>
+<p><strong><code>grayscale(%)</code></strong></p>
+<p>灰度。</p>
+<p><strong><code>invert(%)</code></strong></p>
+<p>反转颜色。</p>
+<p><strong><code>opacity(%)</code></strong></p>
+<p>透明度。</p>
+<p><strong><code>saturate(%)</code></strong></p>
+<p>饱和度。</p>
 <h2 id="pagination"><a class="markdownIt-Anchor" href="#pagination"></a> Pagination</h2>
 <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../css/index07.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Pagination<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores pariatur repellat illum, reprehenderit quidem ab expedita, dicta debitis animi velit laborum molestias. Qui assumenda porro praesentium. Corporis molestiae necessitatibus incidunt.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;fruit&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;apple&quot;</span>&gt;</span>apple<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;orange&quot;</span>&gt;</span>orange<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;banana&quot;</span>&gt;</span>banana<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is page #1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatum nesciunt, facilis commodi id fuga iusto. Delectus, quis labore assumenda enim, aspernatur eaque accusantium eum ullam, recusandae quaerat vel veniam?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pagination&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 向左向右只能手动为每一页填写它对应的上一页和下一页 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="symbol">&amp;lt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;index07.html&quot;</span> <span class="attr">class</span>=<span class="string">&quot;active&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;index00.html&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;index01.html&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;index02.html&quot;</span>&gt;</span>4<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;index03.html&quot;</span>&gt;</span>5<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;index04.html&quot;</span>&gt;</span>6<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;index05.html&quot;</span>&gt;</span>7<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;index06.html&quot;</span>&gt;</span>8<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="symbol">&amp;gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 <div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::first-letter</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">2em</span>;</span><br><span class="line">  <span class="attribute">font-style</span>: italic;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-line</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">233</span>, <span class="number">233</span>, <span class="number">106</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">background-color</span>: grey;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* #fruit li::before &#123;</span></span><br><span class="line"><span class="comment">  content: &quot;✅&quot;;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"><span class="selector-id">#apple</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;🍎&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#orange</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;🍊&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#banana</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;🍌&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#fruit</span> <span class="selector-tag">li</span><span class="selector-pseudo">::marker</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;√&quot;</span>;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">1.5em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pagination</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: black;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">8px</span> <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">a</span><span class="selector-class">.active</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">124</span>, <span class="number">255</span>, <span class="number">124</span>);</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">:not</span>(<span class="selector-class">.active</span>) &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">128</span>, <span class="number">128</span>, <span class="number">128</span>, <span class="number">0.561</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
@@ -699,158 +747,10 @@
 </ul>
 ]]></content>
       <categories>
-        <category>Web</category>
+        <category>Front-End</category>
       </categories>
       <tags>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/4a17b156.html</url>
-    <content><![CDATA[<h1 id="h1"><a class="markdownIt-Anchor" href="#h1"></a> H1</h1>
-<h2 id="h2"><a class="markdownIt-Anchor" href="#h2"></a> H2</h2>
-<h3 id="h3"><a class="markdownIt-Anchor" href="#h3"></a> H3</h3>
-<h4 id="h4"><a class="markdownIt-Anchor" href="#h4"></a> H4</h4>
-<h5 id="h5"><a class="markdownIt-Anchor" href="#h5"></a> H5</h5>
-<h6 id="h6"><a class="markdownIt-Anchor" href="#h6"></a> H6</h6>
-<p><strong>Bold</strong></p>
-<p><em>Italic</em></p>
-<p><s>remove</s></p>
-<p>text</p>
-<p><code>code inline</code></p>
-<pre class="mermaid">pie
-title P
-"1" : 10
-"2" : 10
-"3" : 50
-"4" : 30</pre>
-
-  <div class="note-large 信息">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>信息</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; PII;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">char</span> g[N][N];</span><br><span class="line"><span class="type">int</span> dist[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">-1</span>, <span class="built_in">sizeof</span>(dist));</span><br><span class="line">    queue&lt;PII&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[i][j] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dist[i][j] = <span class="number">0</span>;</span><br><span class="line">                q.<span class="built_in">push</span>(&#123;i, j&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> dx[] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> nx = t.x + dx[i];</span><br><span class="line">            <span class="type">int</span> ny = t.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(nx &lt; <span class="number">0</span> || nx &gt;= n || ny &lt; <span class="number">0</span> || ny &gt;= m) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[nx][ny] != <span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            dist[nx][ny] = dist[t.x][t.y] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(&#123;nx, ny&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, g[i]);</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, dist[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>a</mi><mo>−</mo><mi>b</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
-a + b &amp; = 2 \\
-&amp; = 1 \\
-&amp; = a - b \\
-\end{aligned}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a + b = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
-
-  <div class="note-large default">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <i class="notel-icon fa-solid fa-info"></i><p>信息</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note-large blue">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>提示</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note-large red">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>自定义标题</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small default">
-    <p>默认 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small default">
-    <p>default 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small primary">
-    <p>primary 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small success">
-    <p>success 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small info">
-    <p>info 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small warning">
-    <p>warning 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small danger">
-    <p>danger 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small red icon-padding">
-    <i class="note-icon fa-solid fa-bolt"></i><p>自定义提示块标签</p>
-
-  </div>
-<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Folding 测试： 点击查看更多 </summary>
-              <div class='content'>
-              <p>啊啊啊啊啊</p>  <div class="note p-4 mb-4 rounded-small danger">    <p>danger 提示块标签</p>  </div>  <div class="note p-4 mb-4 rounded-small tip">    <p>tip 提示块标签</p>  </div>
-              </div>
-            </details>
-<details class="red" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>title </summary>
-              <div class='content'>
-              <p>Yes.</p>
-              </div>
-            </details>
-<div class="tabs" id="tab-first-unique-name"><ul class="nav-tabs"><li class="tab active"><a class="#first-unique-name-1">First Tab</a></li><li class="tab"><a class="#first-unique-name-2">Second Tab</a></li><li class="tab"><a class="#first-unique-name-3">Third Tab</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p>
-<p>This is Tab 2.</p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p>
-<p>This is Tab 3.</p>
-<p>This is Tab 3.</p></div></div></div>
-<p>不设置任何参数的 <a class="button " href='/' title='按钮'>按钮</a> 适合融入段落中。</p>
-<p>regular 按钮适合独立于段落之外：</p>
-<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
-<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
-<p>large 按钮更具有强调作用，建议搭配 center 使用：</p>
-<a class="button  center large" href='https://redefine-docs.ohevan.com' title='开始使用'><i class='fa-solid fa-download'></i> 开始使用</a>
-]]></content>
-      <categories>
-        <category>world</category>
-      </categories>
-      <tags>
-        <tag>demo</tag>
       </tags>
   </entry>
   <entry>
@@ -1065,10 +965,158 @@ a + b &amp; = 2 \\
 <p>第二个参数可选，若 <code>true</code> 则强制添加，若 <code>false</code> 则强制删除。</p>
 ]]></content>
       <categories>
-        <category>Web</category>
+        <category>Front-End</category>
       </categories>
       <tags>
         <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/4a17b156.html</url>
+    <content><![CDATA[<h1 id="h1"><a class="markdownIt-Anchor" href="#h1"></a> H1</h1>
+<h2 id="h2"><a class="markdownIt-Anchor" href="#h2"></a> H2</h2>
+<h3 id="h3"><a class="markdownIt-Anchor" href="#h3"></a> H3</h3>
+<h4 id="h4"><a class="markdownIt-Anchor" href="#h4"></a> H4</h4>
+<h5 id="h5"><a class="markdownIt-Anchor" href="#h5"></a> H5</h5>
+<h6 id="h6"><a class="markdownIt-Anchor" href="#h6"></a> H6</h6>
+<p><strong>Bold</strong></p>
+<p><em>Italic</em></p>
+<p><s>remove</s></p>
+<p>text</p>
+<p><code>code inline</code></p>
+<pre class="mermaid">pie
+title P
+"1" : 10
+"2" : 10
+"3" : 50
+"4" : 30</pre>
+
+  <div class="note-large 信息">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>信息</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; PII;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">char</span> g[N][N];</span><br><span class="line"><span class="type">int</span> dist[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">-1</span>, <span class="built_in">sizeof</span>(dist));</span><br><span class="line">    queue&lt;PII&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[i][j] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dist[i][j] = <span class="number">0</span>;</span><br><span class="line">                q.<span class="built_in">push</span>(&#123;i, j&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> dx[] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> nx = t.x + dx[i];</span><br><span class="line">            <span class="type">int</span> ny = t.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(nx &lt; <span class="number">0</span> || nx &gt;= n || ny &lt; <span class="number">0</span> || ny &gt;= m) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[nx][ny] != <span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            dist[nx][ny] = dist[t.x][t.y] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(&#123;nx, ny&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, g[i]);</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, dist[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>a</mi><mo>−</mo><mi>b</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+a + b &amp; = 2 \\
+&amp; = 1 \\
+&amp; = a - b \\
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a + b = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
+
+  <div class="note-large default">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <i class="notel-icon fa-solid fa-info"></i><p>信息</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note-large blue">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>提示</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>自定义标题</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small default">
+    <p>默认 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small default">
+    <p>default 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small primary">
+    <p>primary 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small success">
+    <p>success 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small info">
+    <p>info 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small warning">
+    <p>warning 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small danger">
+    <p>danger 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small red icon-padding">
+    <i class="note-icon fa-solid fa-bolt"></i><p>自定义提示块标签</p>
+
+  </div>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Folding 测试： 点击查看更多 </summary>
+              <div class='content'>
+              <p>啊啊啊啊啊</p>  <div class="note p-4 mb-4 rounded-small danger">    <p>danger 提示块标签</p>  </div>  <div class="note p-4 mb-4 rounded-small tip">    <p>tip 提示块标签</p>  </div>
+              </div>
+            </details>
+<details class="red" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>title </summary>
+              <div class='content'>
+              <p>Yes.</p>
+              </div>
+            </details>
+<div class="tabs" id="tab-first-unique-name"><ul class="nav-tabs"><li class="tab active"><a class="#first-unique-name-1">First Tab</a></li><li class="tab"><a class="#first-unique-name-2">Second Tab</a></li><li class="tab"><a class="#first-unique-name-3">Third Tab</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p>
+<p>This is Tab 2.</p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p>
+<p>This is Tab 3.</p>
+<p>This is Tab 3.</p></div></div></div>
+<p>不设置任何参数的 <a class="button " href='/' title='按钮'>按钮</a> 适合融入段落中。</p>
+<p>regular 按钮适合独立于段落之外：</p>
+<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
+<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
+<p>large 按钮更具有强调作用，建议搭配 center 使用：</p>
+<a class="button  center large" href='https://redefine-docs.ohevan.com' title='开始使用'><i class='fa-solid fa-download'></i> 开始使用</a>
+]]></content>
+      <categories>
+        <category>world</category>
+      </categories>
+      <tags>
+        <tag>demo</tag>
       </tags>
   </entry>
   <entry>
