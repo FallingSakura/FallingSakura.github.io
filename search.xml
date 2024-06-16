@@ -1,6 +1,1203 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++ Note</title>
+    <url>/edeb27c6.html</url>
+    <content><![CDATA[<h1 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h1>
+<h2 id="枚举类型"><a class="markdownIt-Anchor" href="#枚举类型"></a> 枚举类型</h2>
+<p>枚举 <code>enum</code> 是一种用户定义的类型，它由一组命名的整数常量组成。枚举类型的主要目的是提高代码的可读性和可维护性，特别是在处理一组相关的常量时。</p>
+<p><strong>示例</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">eDirection</span> &#123; STOP = <span class="number">0</span>, LEFT, RIGHT, UP, DOWN &#125;;</span><br><span class="line">eDirection dir;</span><br></pre></td></tr></table></figure></div>
+<p>这里就定义了一个枚举类型 <code>eDirection</code>，和这个类型的一个变量 <code>dir</code>，它只可以取其中这些常量的值。</p>
+<h1 id="库"><a class="markdownIt-Anchor" href="#库"></a> 库</h1>
+<h2 id="conioh"><a class="markdownIt-Anchor" href="#conioh"></a> conio.h</h2>
+<p><strong><code>_kbhit()</code></strong></p>
+<p>如果有键盘输入，则返回 1.</p>
+<p>否则返回 0.</p>
+<p>它是非阻塞的，这点与 <code>_getch()</code> 不同。</p>
+<p><strong><code>_getch()</code></strong></p>
+<p>从控制台中读取单个字符，不需要回车键。</p>
+<p>且读取的字符不会在控制台中显示。</p>
+]]></content>
+      <categories>
+        <category>Back-End</category>
+      </categories>
+      <tags>
+        <tag>cpp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/4a17b156.html</url>
+    <content><![CDATA[<h1 id="h1"><a class="markdownIt-Anchor" href="#h1"></a> H1</h1>
+<h2 id="h2"><a class="markdownIt-Anchor" href="#h2"></a> H2</h2>
+<h3 id="h3"><a class="markdownIt-Anchor" href="#h3"></a> H3</h3>
+<h4 id="h4"><a class="markdownIt-Anchor" href="#h4"></a> H4</h4>
+<h5 id="h5"><a class="markdownIt-Anchor" href="#h5"></a> H5</h5>
+<h6 id="h6"><a class="markdownIt-Anchor" href="#h6"></a> H6</h6>
+<p><strong>Bold</strong></p>
+<p><em>Italic</em></p>
+<p><s>remove</s></p>
+<p>text</p>
+<p><code>code inline</code></p>
+<pre class="mermaid">pie
+title P
+"1" : 10
+"2" : 10
+"3" : 50
+"4" : 30</pre>
+
+  <div class="note-large 信息">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>信息</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; PII;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">char</span> g[N][N];</span><br><span class="line"><span class="type">int</span> dist[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">-1</span>, <span class="built_in">sizeof</span>(dist));</span><br><span class="line">    queue&lt;PII&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[i][j] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dist[i][j] = <span class="number">0</span>;</span><br><span class="line">                q.<span class="built_in">push</span>(&#123;i, j&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> dx[] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> nx = t.x + dx[i];</span><br><span class="line">            <span class="type">int</span> ny = t.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(nx &lt; <span class="number">0</span> || nx &gt;= n || ny &lt; <span class="number">0</span> || ny &gt;= m) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[nx][ny] != <span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            dist[nx][ny] = dist[t.x][t.y] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(&#123;nx, ny&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, g[i]);</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, dist[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>a</mi><mo>−</mo><mi>b</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+a + b &amp; = 2 \\
+&amp; = 1 \\
+&amp; = a - b \\
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a + b = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
+
+  <div class="note-large default">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <i class="notel-icon fa-solid fa-info"></i><p>信息</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note-large blue">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>提示</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>自定义标题</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small default">
+    <p>默认 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small default">
+    <p>default 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small primary">
+    <p>primary 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small success">
+    <p>success 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small info">
+    <p>info 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small warning">
+    <p>warning 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small danger">
+    <p>danger 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small red icon-padding">
+    <i class="note-icon fa-solid fa-bolt"></i><p>自定义提示块标签</p>
+
+  </div>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Folding 测试： 点击查看更多 </summary>
+              <div class='content'>
+              <p>啊啊啊啊啊</p>  <div class="note p-4 mb-4 rounded-small danger">    <p>danger 提示块标签</p>  </div>  <div class="note p-4 mb-4 rounded-small tip">    <p>tip 提示块标签</p>  </div>
+              </div>
+            </details>
+<details class="red" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>title </summary>
+              <div class='content'>
+              <p>Yes.</p>
+              </div>
+            </details>
+<div class="tabs" id="tab-first-unique-name"><ul class="nav-tabs"><li class="tab active"><a class="#first-unique-name-1">First Tab</a></li><li class="tab"><a class="#first-unique-name-2">Second Tab</a></li><li class="tab"><a class="#first-unique-name-3">Third Tab</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p>
+<p>This is Tab 2.</p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p>
+<p>This is Tab 3.</p>
+<p>This is Tab 3.</p></div></div></div>
+<p>不设置任何参数的 <a class="button " href='/' title='按钮'>按钮</a> 适合融入段落中。</p>
+<p>regular 按钮适合独立于段落之外：</p>
+<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
+<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
+<p>large 按钮更具有强调作用，建议搭配 center 使用：</p>
+<a class="button  center large" href='https://redefine-docs.ohevan.com' title='开始使用'><i class='fa-solid fa-download'></i> 开始使用</a>
+]]></content>
+      <categories>
+        <category>world</category>
+      </categories>
+      <tags>
+        <tag>demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ChatGPT：开启个人成长的新纪元</title>
+    <url>/5a99080f.html</url>
+    <content><![CDATA[
+  <div class="note p-4 mb-4 rounded-small pink icon-padding">
+    <i class="note-icon fa-solid fa-lightbulb"></i><p>本文标题及封面均使用 ChatGPT 生成。</p>
+
+  </div>
+<h1 id="chatgpt-与个人能力"><a class="markdownIt-Anchor" href="#chatgpt-与个人能力"></a> ChatGPT 与个人能力</h1>
+<blockquote>
+<p>视频原地址：<a class="link"   href="https://www.bilibili.com/video/BV1th4y137yh/" >ChatGPT 是少数强者的【外挂】｜ChatGPT使用教程_哔哩哔哩_bilibili <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<h2 id="快速学习"><a class="markdownIt-Anchor" href="#快速学习"></a> 快速学习</h2>
+<blockquote>
+<p>你想做的事情，99.99% 别人都做过，而且做的比你好，你只需要搜到它，然后改良它。</p>
+</blockquote>
+<p>SECI 模型，即显性知识和隐形知识之间的相互转化。</p>
+<p>社会化、外在化、联结化、内在化。</p>
+<p>这里写一条我自己的感悟：只有显性知识才是能作为笔记的，隐形知识需要你上手去做。</p>
+<p><strong>搜索力</strong></p>
+<p>常用为 Bilibili，Google，Youtube，ChatGPT，sci-hub.</p>
+<p>并且 ChatGPT 可以把一个知识以 SECI 的三个阶段和学习力的三个层次有针对性地展开为你讲解，这是一般搜索引擎做不到的。</p>
+<p>强者的<strong>五大核心竞争力</strong>（使用工具的能力）。</p>
+<ul>
+<li>快速学习的能力（三个层次：有人手把手教，自己从书上学，探索未知）</li>
+<li>提问能力（高质量问题）</li>
+<li>批判性思考（苏格拉底提问）</li>
+<li>结构化思考（构建模型）</li>
+<li>创新（延续性创新）</li>
+</ul>
+<p>而想使用好 ChatGPT 这个工具，最需要的就是提问能力。</p>
+<h2 id="提问能力"><a class="markdownIt-Anchor" href="#提问能力"></a> 提问能力</h2>
+<blockquote>
+<p>最重要、最艰难的工作，从来不是找到对的答案，而是问出正确的问题。——彼得</p>
+</blockquote>
+<p><strong>我不擅长提问。</strong></p>
+<p>这里有一个<strong>布鲁姆教育目标分类模型</strong>，可以基于此进行提问。</p>
+<p>利用 Chat GPT 训练你的提问能力。</p>
+<p>你也可以向它提问如何更好地利用它，如何向它提问。</p>
+<p>你的问题质量越高、描述的越清楚、越详细，你得到的它的答案也就越详细越准确，越能得到你想要的信息。</p>
+<p>问题之间可以组合，但数量不宜过多。（因为它有字数限制）</p>
+<h2 id="批判性思考"><a class="markdownIt-Anchor" href="#批判性思考"></a> 批判性思考</h2>
+<blockquote>
+<p><strong>批判性思考本质上是思考观点背后的思考过程</strong></p>
+</blockquote>
+<p>任何<em>观点</em>，都是针对某个<em>论题</em>，基于特定的<em>概念</em>、<em>证据事实</em>和<em>假设</em>，站在特定的<em>立场</em>，进行<em>推理和解释</em>，从而支持某个<em>结论</em>。</p>
+<p>包括观点、论题、证据事实、结论、推理理解的过程、假设、概念、立场。</p>
+<p>可以问它观点的各个论证部分，也可以让它针对各个论证部分进行批判。</p>
+<p>最简单的批判方式就是批判概念。</p>
+<ul>
+<li><strong>苏格拉底提问方法</strong></li>
+<li><strong>基于结构化分析问题/创新的目的，让它为你提供一些批判句式</strong></li>
+<li><strong>结合论证谬误提问</strong></li>
+</ul>
+<p>这些就不详细展开了（可以问 GPT）。</p>
+<h2 id="结构化思考"><a class="markdownIt-Anchor" href="#结构化思考"></a> 结构化思考</h2>
+<p>学会 MECE 的分类方法（相互独立且完全穷尽）。</p>
+<p>把隐性的知识显性化。</p>
+<p>让⌈它⌋给你推荐不同结构的模型，并且教给你这些模型具体该怎么使用，有哪些局限，具体的例子有哪些，分析这个模型的应用场景和它的结构，并根据你的需求推荐相应的模型。</p>
+<h2 id="创新"><a class="markdownIt-Anchor" href="#创新"></a> 创新</h2>
+<p><em>颠覆性创新/延续性创新</em></p>
+<p>需要了解创新者的五个工具。</p>
+<p>对于一个问题，你可以让 ChatGPT 基于一个特定的思考结构进行发散。</p>
+<p>比如：让它扮演不同角色的人，站在不同的立场对一个问题进行讨论。</p>
+<p>比如：基于某种背景，让它预测未来的发展趋势。</p>
+<p>比如：给它一些需求，问它有没有好的解决办法。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>快速学习显性知识，通过提出高质量问题内化成自己批判性思考的能力、结构化思考能力，最终实现创新。</p>
+<h1 id="常用插件"><a class="markdownIt-Anchor" href="#常用插件"></a> 常用插件</h1>
+<p>以下是⌈它们⌋针对我“请介绍一下你自己的功能以及我该如何使用。”的问题作出的回答。</p>
+<h2 id="webpilot"><a class="markdownIt-Anchor" href="#webpilot"></a> WebPilot</h2>
+<p>你好，WebPilot 是一个强大的 ChatGPT 插件，专为增强您的在线浏览体验而设计。以下是 WebPilot 插件的详细功能以及使用方法：</p>
+<h3 id="功能介绍"><a class="markdownIt-Anchor" href="#功能介绍"></a> 功能介绍</h3>
+<ol>
+<li>
+<p><strong>网页内容总结</strong></p>
+<ul>
+<li>输入一个网页 URL，WebPilot 将提取网页内容并返回简明扼要的总结，帮助您快速了解网页的主要内容。</li>
+</ul>
+</li>
+<li>
+<p><strong>视频内容总结</strong></p>
+<ul>
+<li>输入一个 YouTube 视频的 URL，WebPilot 将分析视频内容并提供详细的总结，确保您无需观看完整视频即可掌握核心信息。</li>
+</ul>
+</li>
+<li>
+<p><strong>信息搜索和翻译</strong></p>
+<ul>
+<li>输入您的查询，WebPilot 将使用您设定的语言进行搜索，并返回相关信息。支持将查询转换为不同语言并提供多种资源链接。</li>
+</ul>
+</li>
+</ol>
+<h3 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法</h3>
+<ol>
+<li>
+<p><strong>网页内容总结</strong></p>
+<ul>
+<li>直接输入您要浏览的网页 URL。</li>
+<li>WebPilot 将分析该网页，并以项目符号的形式呈现关键点，最后提供一个主要结论。</li>
+</ul>
+</li>
+<li>
+<p><strong>视频内容总结</strong></p>
+<ul>
+<li>直接输入 YouTube 视频的 URL。</li>
+<li>WebPilot 将总结视频的主要内容，列出详细的要点，并提供一个关键结论。</li>
+</ul>
+</li>
+<li>
+<p><strong>信息搜索</strong></p>
+<ul>
+<li>提出您的查询问题，如“法国最好的餐厅在哪里？”。</li>
+<li>WebPilot 将搜索相关信息并以设定语言返回结果，同时提供多个资源链接供参考。</li>
+</ul>
+</li>
+</ol>
+<h3 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h3>
+<ul>
+<li>
+<p><strong>网页总结</strong></p>
+<ul>
+<li>输入：“<a class="link"   href="https://example.com" >https://example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>”</li>
+<li>返回：该网页的关键点总结和主要结论。</li>
+</ul>
+</li>
+<li>
+<p><strong>视频总结</strong></p>
+<ul>
+<li>输入：“<a class="link"   href="https://www.youtube.com/watch?v=example%E2%80%9D" >https://www.youtube.com/watch?v=example” <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>返回：该视频的详细要点总结和主要结论。</li>
+</ul>
+</li>
+<li>
+<p><strong>信息搜索</strong></p>
+<ul>
+<li>输入：“巴黎最佳景点？”</li>
+<li>返回：有关巴黎最佳景点的多种资源链接和总结信息。</li>
+</ul>
+</li>
+</ul>
+<h2 id="code-copilot"><a class="markdownIt-Anchor" href="#code-copilot"></a> Code Copilot</h2>
+<p>我是 Code Copilot，您的编程助手，旨在帮助您完成各种编程任务。以下是我的功能和使用指南：</p>
+<h3 id="功能"><a class="markdownIt-Anchor" href="#功能"></a> 功能</h3>
+<ol>
+<li><strong>代码编写</strong>：编写高效、可读、清晰且可维护的代码。</li>
+<li><strong>代码调试</strong>：分析和修复代码中的错误。</li>
+<li><strong>代码解释</strong>：逐步解释代码的工作原理。</li>
+<li><strong>代码审查</strong>：检查代码的功能，确保其无错误，并提供改进建议。</li>
+<li><strong>API 文档阅读</strong>：帮助解析和理解 API 文档。</li>
+<li><strong>实时搜索</strong>：执行实时搜索以检索最新数据或信息。</li>
+<li><strong>单元测试编写</strong>：编写单元测试以验证代码的功能。</li>
+</ol>
+<h3 id="使用指南"><a class="markdownIt-Anchor" href="#使用指南"></a> 使用指南</h3>
+<ol>
+<li><strong>指定语言</strong>：使用命令<code>/start(language?: string)</code>指定或输入您要使用的编程语言。</li>
+<li><strong>代码编写与调试</strong>：
+<ul>
+<li>粘贴您的代码、文档或描述具体的编码问题。</li>
+<li>使用命令<code>/quick_fix(any: string)</code>进行快速修复。</li>
+<li>使用命令<code>/fix(any: string)</code>进行详细的调试。</li>
+</ul>
+</li>
+<li><strong>代码解释与审查</strong>：
+<ul>
+<li>使用命令<code>/explain(any: string)</code>逐步解释代码。</li>
+<li>使用命令<code>/review(any: string)</code>审查代码并提供改进建议。</li>
+</ul>
+</li>
+<li><strong>API 文档阅读</strong>：提供 API 文档的链接，我将帮助解析和理解。
+<ul>
+<li>使用命令<code>/read(urls: string[])</code>读取网页内容。</li>
+</ul>
+</li>
+<li><strong>实时搜索</strong>：使用命令<code>/search(any: string)</code>执行实时搜索以检索最新信息。</li>
+</ol>
+<h3 id="具体步骤"><a class="markdownIt-Anchor" href="#具体步骤"></a> 具体步骤</h3>
+<ol>
+<li><strong>粘贴代码或文档</strong>：提供您当前的代码片段、文档或描述您遇到的问题。</li>
+<li><strong>选择合适的命令</strong>：根据您的需求选择上述命令之一。</li>
+<li><strong>获得帮助</strong>：查看我的响应，获取解决方案或进一步指导。</li>
+</ol>
+<h2 id="code-tutor"><a class="markdownIt-Anchor" href="#code-tutor"></a> Code Tutor</h2>
+<p>你好！我是一个名为Khanmigo Lite的AI学习助手，由Khan Academy与OpenAI合作开发，旨在帮助你学习编程和计算机科学。我可以帮助你理解编程概念，解决代码中的问题，以及指导你如何改进你的编程技能。</p>
+<p>你可以这样使用我：</p>
+<ol>
+<li><strong>代码问题</strong>：如果你在编写代码时遇到了问题，可以把代码粘贴过来，告诉我你卡在哪个部分。我会帮助你找到问题并指导你如何解决。</li>
+<li><strong>概念理解</strong>：如果你对某个编程概念不太理解，可以向我提问，我会帮助你理清思路。</li>
+<li><strong>算法设计</strong>：如果你需要设计一个算法或解决一个特定的问题，可以告诉我你的想法，我会引导你一步步完成。</li>
+</ol>
+<p>为了更好地帮助你，请把你的代码或问题详细描述一下，并告诉我你目前遇到的困难。我会根据你的描述，提供指导和建议。你准备好开始了吗？可以先上传你的作业或代码，让我们看看你正在处理什么问题。</p>
+<h2 id="scholar-gpt"><a class="markdownIt-Anchor" href="#scholar-gpt"></a> Scholar GPT</h2>
+<p>你好！我是Scholar GPT，你的多功能研究助手。我可以帮助你进行数据分析、学术研究、数学问题求解以及在线信息检索。以下是我的一些主要功能和使用方法：</p>
+<h3 id="1-数据分析与可视化"><a class="markdownIt-Anchor" href="#1-数据分析与可视化"></a> 1. 数据分析与可视化</h3>
+<p>我可以使用Python库（如Pandas、Matplotlib等）进行数据分析和可视化。如果你有数据集需要分析，可以将数据上传给我，我可以为你生成图表和统计报告。</p>
+<h3 id="2-学术研究"><a class="markdownIt-Anchor" href="#2-学术研究"></a> 2. 学术研究</h3>
+<p>我可以搜索和获取学术论文和研究文章的信息。你可以提供具体的研究主题或关键词，我会为你找到相关的学术资源，并提供引用和链接。</p>
+<h3 id="3-专利检索"><a class="markdownIt-Anchor" href="#3-专利检索"></a> 3. 专利检索</h3>
+<p>我可以帮助你检索专利信息。只需提供关键词和其他过滤条件（如国家、时间范围），我会找到相关的专利并提供详细信息。</p>
+<h3 id="4-数学问题求解"><a class="markdownIt-Anchor" href="#4-数学问题求解"></a> 4. 数学问题求解</h3>
+<p>我可以解决复杂的数学问题，包括符号运算和数值计算。如果你有特定的数学问题，请描述问题的详细内容，我会为你提供解答步骤和结果。</p>
+<h3 id="5-网页数据处理"><a class="markdownIt-Anchor" href="#5-网页数据处理"></a> 5. 网页数据处理</h3>
+<p>我可以从网页上提取和处理数据。如果你有特定的网址需要分析，可以提供链接，我会从中提取有用的信息。</p>
+<h3 id="6-自然语言处理"><a class="markdownIt-Anchor" href="#6-自然语言处理"></a> 6. 自然语言处理</h3>
+<p>我可以进行文本分析和情感分析等自然语言处理任务。如果你有文本需要分析，例如情感倾向分析或关键词提取，可以将文本提供给我。</p>
+<h3 id="使用示例"><a class="markdownIt-Anchor" href="#使用示例"></a> 使用示例</h3>
+<ol>
+<li><strong>数据分析</strong>：上传一个CSV文件，并告诉我你希望分析的内容。</li>
+<li><strong>学术研究</strong>：告诉我你感兴趣的研究主题，例如“机器学习在医学中的应用”，我会为你找到相关的学术文章。</li>
+<li><strong>专利检索</strong>：提供关键词和过滤条件，例如“人工智能专利在美国”，我会为你检索相关专利。</li>
+<li><strong>数学问题</strong>：描述你的数学问题，例如“求解微分方程y’’ + y = 0”，我会为你提供解答。</li>
+</ol>
+<h2 id="write-for-me"><a class="markdownIt-Anchor" href="#write-for-me"></a> Write For Me</h2>
+<p>当然！我是一个专门为内容创作和优化设计的聊天机器人，具备以下功能：</p>
+<ol>
+<li>
+<p><strong>理解用户需求</strong>：</p>
+<ul>
+<li>我会询问你的具体需求，包括使用目的、目标受众、语气、字数、风格和内容格式等，以确保我能提供最合适的内容。</li>
+</ul>
+</li>
+<li>
+<p><strong>创建内容大纲</strong>：</p>
+<ul>
+<li>根据你的要求，我首先会创建详细的大纲，将内容分成不同部分，并对每个部分进行总结，分配字数。</li>
+</ul>
+</li>
+<li>
+<p><strong>字数管理</strong>：</p>
+<ul>
+<li>我在写作过程中会时刻跟踪字数，确保符合你的要求，并在各部分之间进行平滑过渡。</li>
+</ul>
+</li>
+<li>
+<p><strong>创意扩展</strong>：</p>
+<ul>
+<li>我会使用各种策略来丰富内容，例如扩展讨论、加入要点和有趣的事实，同时保持内容的相关性和质量。</li>
+</ul>
+</li>
+<li>
+<p><strong>分段写作和交付</strong>：</p>
+<ul>
+<li>我会按部分逐步写作和交付内容，随时向你更新进度，并计划下一部分的内容。</li>
+</ul>
+</li>
+<li>
+<p><strong>内容质量</strong>：</p>
+<ul>
+<li>我会整合SEO策略，确保内容具有吸引力，适合目标受众和发布平台。</li>
+</ul>
+</li>
+<li>
+<p><strong>内容格式</strong>：</p>
+<ul>
+<li>默认格式为markdown，但我可以根据你的需求调整为任何格式。</li>
+</ul>
+</li>
+<li>
+<p><strong>延伸互动</strong>：</p>
+<ul>
+<li>对于复杂话题或长篇内容，我会提前告知需要多次回复，以确保整个内容的连贯性。</li>
+</ul>
+</li>
+<li>
+<p><strong>问题解决</strong>：</p>
+<ul>
+<li>我会以解决问题的心态来处理任务，旨在满足你的具体需求和挑战。</li>
+</ul>
+</li>
+</ol>
+<p>这些功能旨在为你提供高质量、定制化的内容创作服务。如果你有任何具体需求或问题，请随时告诉我！</p>
+<h2 id="translate-gpt"><a class="markdownIt-Anchor" href="#translate-gpt"></a> Translate GPT</h2>
+<p>这个没什么好说的。</p>
+<h2 id="image-generator"><a class="markdownIt-Anchor" href="#image-generator"></a> Image Generator</h2>
+<p>这是用它生成的一张科幻风格的宇宙插画。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202405212116475.webp"
+                      alt="DALL·E 2024-05-21 21.15.12 - A detailed sci-fi style illustration of the universe. The scene includes a vast expanse of space filled with colorful nebulae, distant galaxies, and b.webp" 
+                ></p>
+<p>还是很不错的。</p>
+<h2 id="总结-2"><a class="markdownIt-Anchor" href="#总结-2"></a> 总结</h2>
+<p>我们通过各种插件，能够使用 ChatGPT 联网了解到最新的信息，为不同领域的人提供垂直信息，增强了信息的准确度和专业性，查找论文、文档，总结视频等等。</p>
+<p>还有艺术创新类的工作，比如生成图片/视频/图标，这些都大大提高了我们的工作效率。</p>
+<p>我初次对 GPT-4 进行较为深入的体验，之前一直用的是 Bing 的 3.5 模型，感觉也不过如此，但现在确实被 GPT-4 的强大功能所震撼到。它能够节省很多我们在查找筛选整合信息的时间，通过它能锻炼我们提问、思考、内化的能力，未来，会使用工具是一个必不可少的能力。</p>
+]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
+      <tags>
+        <tag>chatgpt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript Note</title>
+    <url>/fbbf86b6.html</url>
+    <content><![CDATA[
+  <div class="note p-4 mb-4 rounded-small warning icon-padding">
+    <i class="note-icon fa-solid fa-hand-point-right"></i><p>本 <strong>Note</strong> 记录学习过程中遇到的一些问题，学到哪里便记到哪里，<strong>不适合作为系统学习的参考</strong>，持续更新。</p>
+
+  </div>
+<h1 id="basic"><a class="markdownIt-Anchor" href="#basic"></a> Basic</h1>
+<h2 id="变量和常量"><a class="markdownIt-Anchor" href="#变量和常量"></a> 变量和常量</h2>
+<p><code>var</code> 为全局作用域，可以理解为所有的 <code>var</code> 相当于都出现在文件开头，在全局内都有效。</p>
+<p><code>let</code> 为块级作用域。</p>
+<p>举个例子：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a ,b);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">1</span></span><br></pre></td></tr></table></figure></div>
+<p>这段代码中，<code>b</code> 会报错，而 <code>a</code> 不会。</p>
+<p><code>const</code> 为常量，不可修改，需要在初始化时声明数值。。</p>
+<h2 id="对象"><a class="markdownIt-Anchor" href="#对象"></a> 对象</h2>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> ob = &#123;</span><br><span class="line">  [key]: [value],</span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure></div>
+<p>对象的 <code>key</code> 可以是字符串、非字符串（会转换为字符串），符号。</p>
+<p>通常对象的键不可以是函数，我们可以把函数转化为相应的字符串，或者使用 <code>Map</code> 数据结构。</p>
+<h2 id="数组"><a class="markdownIt-Anchor" href="#数组"></a> 数组</h2>
+<p>以创建一个长度为 <code>num</code> 且初始化全部是 0 为例子。</p>
+<h3 id="fill"><a class="markdownIt-Anchor" href="#fill"></a> fill</h3>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>; <span class="comment">// 假设数组长度为 10</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(num).<span class="title function_">fill</span>(<span class="number">0</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr); <span class="comment">// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="from"><a class="markdownIt-Anchor" href="#from"></a> from</h3>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>; <span class="comment">// 假设数组长度为 10</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123; <span class="attr">length</span>: num &#125;, <span class="function">() =&gt;</span> <span class="number">0</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr); <span class="comment">// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span></span><br></pre></td></tr></table></figure></div>
+<p><code>Array.from()</code> 可以将一个类数组对象转化为数组，这个对象需要有 <code>length</code> 属性，否则数组长度将为 0</p>
+<p><strong>示例</strong></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = &#123;<span class="number">1</span>: <span class="string">&#x27;1&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;haha&#x27;</span>, <span class="number">3</span>: <span class="number">3</span>, <span class="string">&#x27;length&#x27;</span>: <span class="number">10</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="title class_">Array</span>.<span class="title function_">from</span>(arr);</span><br></pre></td></tr></table></figure></div>
+<h3 id="for"><a class="markdownIt-Anchor" href="#for"></a> for</h3>
+<p>朴素的 <code>for</code> 循环，这里就不献丑了。</p>
+<h2 id="常用方法"><a class="markdownIt-Anchor" href="#常用方法"></a> 常用方法</h2>
+<h3 id="map"><a class="markdownIt-Anchor" href="#map"></a> map</h3>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> newArray = array.<span class="title function_">map</span>(<span class="title function_">callback</span>(currentValue[, index[, array]])[, thisArg])</span><br></pre></td></tr></table></figure></div>
+<p>该方法对数组中的每个元素调用一次函数，得到的返回值作为新的数组值，最后得到一个新数组。</p>
+<ul>
+<li><code>callback</code>：用于生成新数组元素的函数，接受三个参数：
+<ul>
+<li><code>currentValue</code>：当前正在处理的元素。</li>
+<li><code>index</code>（可选）：当前正在处理的元素的索引。</li>
+<li><code>array</code>（可选）：<code>map</code> 方法被调用的数组。</li>
+</ul>
+</li>
+<li><code>thisArg</code>（可选）：执行回调时用作 <code>this</code> 值的对象。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用箭头函数作为回调函数</span></span><br><span class="line"><span class="keyword">const</span> doubled = numbers.<span class="title function_">map</span>(<span class="function"><span class="params">num</span> =&gt;</span> num * <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(doubled); <span class="comment">// 输出: [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;Bob&quot;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;Charlie&quot;</span>, <span class="attr">age</span>: <span class="number">35</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userNames = users.<span class="title function_">map</span>(<span class="function"><span class="params">user</span> =&gt;</span> user.<span class="property">name</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(userNames); <span class="comment">// 输出: [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;]</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="json"><a class="markdownIt-Anchor" href="#json"></a> JSON</h3>
+<p><strong><code>JSON.stringify()</code></strong></p>
+<p>将值转换为 JSON 字符串（通常传入对象或数组）。</p>
+<h3 id="filter"><a class="markdownIt-Anchor" href="#filter"></a> filter</h3>
+<p>用于数组，创建一个新数组。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> newArray = array.<span class="title function_">filter</span>(<span class="title function_">callback</span>(element[, index[, array]])[, thisArg])</span><br></pre></td></tr></table></figure></div>
+<p>新数组将包含通过 <code>callback</code> 测试的元素。</p>
+<h2 id="function"><a class="markdownIt-Anchor" href="#function"></a> function</h2>
+<h3 id="简单声明"><a class="markdownIt-Anchor" href="#简单声明"></a> 简单声明</h3>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> 函数名(参数<span class="number">1</span>, 参数<span class="number">2</span>, ...) &#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">  <span class="comment">// 执行一些操作</span></span><br><span class="line">  <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><strong>示例：</strong></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">greet</span>(<span class="string">&quot;Alice&quot;</span>)); <span class="comment">// 输出: Hello, Alice!</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>也可以赋值给一个变量：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = <span class="keyword">function</span>(<span class="params">参数<span class="number">1</span>, 参数<span class="number">2</span>, ...</span>) &#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">  <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+<p><strong>示例：</strong></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> greet = <span class="keyword">function</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">greet</span>(<span class="string">&quot;Bob&quot;</span>)); <span class="comment">// 输出: Hello, Bob!</span></span><br></pre></td></tr></table></figure></div>
+<p>也可以使用 ES6 引入的<strong>箭头函数</strong>：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = <span class="function">(<span class="params">参数<span class="number">1</span>, 参数<span class="number">2</span>, ...</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">  <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+<p>如果只有一个表达式，那么可以进一步简化（省略 <code>return</code>）：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = <span class="function">(<span class="params">参数<span class="number">1</span>, 参数<span class="number">2</span>, ...</span>) =&gt;</span> 返回值;</span><br></pre></td></tr></table></figure></div>
+<p>箭头前是函数的形参，箭头后是函数体（返回值）。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = (<span class="params">name</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 简化形式</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = name =&gt; <span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">greet</span>(<span class="string">&quot;Charlie&quot;</span>)); <span class="comment">// 输出: Hello, Charlie!</span></span><br></pre></td></tr></table></figure></div>
+<p>箭头函数只能被赋值给一个变量，或者作为其它表达式的一部分。</p>
+<h3 id="高阶函数"><a class="markdownIt-Anchor" href="#高阶函数"></a> 高阶函数</h3>
+<p>接受一个/多个函数作为参数，或者返回一个函数的函数。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">createMultiplier</span> = multiplier =&gt; <span class="function"><span class="params">number</span> =&gt;</span> number * multiplier;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> double = <span class="title function_">createMultiplier</span>(<span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">double</span>(<span class="number">5</span>)); <span class="comment">// 输出: 10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> triple = <span class="title function_">createMultiplier</span>(<span class="number">3</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">triple</span>(<span class="number">5</span>)); <span class="comment">// 输出: 15</span></span><br></pre></td></tr></table></figure></div>
+<p><strong>解释</strong>：</p>
+<ul>
+<li><code>createMultiplier</code> 是一个高阶函数，它接受一个参数 <code>multiplier</code>。</li>
+<li>它返回一个新的箭头函数 <code>number =&gt; number * multiplier</code>。</li>
+<li>返回的函数接收一个参数 <code>number</code>，并返回 <code>number</code> 与 <code>multiplier</code> 的乘积。</li>
+</ul>
+<ol>
+<li>接受函数作为参数</li>
+</ol>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">isEven</span> = num =&gt; num % <span class="number">2</span> === <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> evenNumbers = numbers.<span class="title function_">filter</span>(isEven);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(evenNumbers); <span class="comment">// 输出: [2, 4]</span></span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>filter</code> 方法接受一个回调函数 <code>isEven</code>，该函数判断一个数是否为偶数。</li>
+<li><code>filter</code> 方法遍历 <code>numbers</code> 数组，并返回所有使回调函数返回 <code>true</code> 的元素组成的新数组。</li>
+</ul>
+<ol start="2">
+<li>一个简单的缓存函数</li>
+</ol>
+<p><strong>示例：</strong></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">cacheFunction</span> = fn =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> cache = &#123;&#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> key = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(args);</span><br><span class="line">    <span class="keyword">if</span> (!cache[key]) &#123;</span><br><span class="line">      cache[key] = <span class="title function_">fn</span>(...args);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cache[key];</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; a + b;</span><br><span class="line"><span class="keyword">const</span> cachedAdd = <span class="title function_">cacheFunction</span>(add);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">cachedAdd</span>(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">// 输出: 3</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">cachedAdd</span>(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">// 输出: 3（从缓存中获取）</span></span><br></pre></td></tr></table></figure></div>
+<p>详细解释一下这个缓存函数：</p>
+<ul>
+<li><code>cacheFunction</code> 是一个高阶函数，接受一个函数 <code>fn</code> 作为参数。</li>
+<li><code>cache = &#123;&#125;</code> 是用来初始化一个空对象，用于存储函数的计算结果。这个对象的键是<strong>函数参数的字符串表示</strong>（通过剩余参数将所有参数存入一个数组中，然后将这个数组转化为 JSON 字符串，作为 <code>cache</code> 对象的键），值是函数执行的结果。</li>
+<li>它返回一个新的函数，该函数使用一个对象 <code>cache</code> 来存储计算结果。</li>
+<li>当调用返回的函数时，它会先检查 <code>cache</code> 中是否有结果，如果没有则计算并存储结果。</li>
+</ul>
+<h3 id="剩余参数"><a class="markdownIt-Anchor" href="#剩余参数"></a> 剩余参数</h3>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">...name</span><br></pre></td></tr></table></figure></div>
+<p>表示函数的可变参数，所有传入的参数收集到一个 <code>name</code> 数组中。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">exampleFunction</span> = (<span class="params">...args</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(args);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">exampleFunction</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// 输出: [1, 2, 3]</span></span><br></pre></td></tr></table></figure></div>
+<p>如本例中的 <code>args</code> 数组就是 <code>[1, 2, 3]</code>。</p>
+<h3 id="函数提升"><a class="markdownIt-Anchor" href="#函数提升"></a> 函数提升</h3>
+<p>函数在声明之前可以被调用，但是函数表达式不可以。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sayHello</span>()); <span class="comment">// 输出: Hello, World!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sayHello</span>()); <span class="comment">// 报错: sayHello is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sayHello = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+<h1 id="dom"><a class="markdownIt-Anchor" href="#dom"></a> DOM</h1>
+<h2 id="css-选择器的区别"><a class="markdownIt-Anchor" href="#css-选择器的区别"></a> CSS 选择器的区别</h2>
+<ol>
+<li>
+<p><strong><code>.container &gt; .panel</code></strong></p>
+<ul>
+<li>选择所有直接子元素 <code>.panel</code>，它们的父元素是 <code>.container</code>。</li>
+<li><strong>示例：</strong></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>直接子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>不是直接子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>仅选择第一个 <code>div.panel</code>，因为它是 <code>div.container</code> 的直接子元素。</p>
+<ol start="2">
+<li>
+<p><strong><code>.container .panel</code></strong></p>
+<ul>
+<li>选择所有后代元素 <code>.panel</code>，它们位于 <code>.container</code> 内部，无论层级如何。</li>
+<li><strong>示例：</strong></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>直接子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>嵌套的子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>选择两个 <code>div.panel</code>，因为它们都是 <code>div.container</code> 的后代元素。</p>
+<ol start="3">
+<li>
+<p><strong><code>.container.panel</code></strong></p>
+<ul>
+<li>选择同时包含 <code>container</code> 和 <code>panel</code> 类的所有元素。</li>
+<li><strong>示例：</strong></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container panel&quot;</span>&gt;</span></span><br><span class="line">  同时拥有 container 和 panel 类的元素</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>单独拥有 panel 类的元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>仅选择第一个 <code>div</code>，因为它同时拥有 <code>container</code> 和 <code>panel</code> 类。</p>
+<h2 id="function-2"><a class="markdownIt-Anchor" href="#function-2"></a> Function</h2>
+<h3 id="selector"><a class="markdownIt-Anchor" href="#selector"></a> Selector</h3>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(selectors);</span><br></pre></td></tr></table></figure></div>
+<p>返回的是匹配的第一个元素。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(selectors);</span><br></pre></td></tr></table></figure></div>
+<p>返回的是一个 NodeList，是一种类数组对象，表示文档中的一组节点，储存<strong>匹配选择器</strong>的所有元素。</p>
+<p>不是数组，有 <code>length</code> 属性，可以通过索引访问其中的元素。</p>
+<h3 id="foreach"><a class="markdownIt-Anchor" href="#foreach"></a> forEach</h3>
+<p>遍历数组或类数组对象，对数组中的每个元素执行一次提供（参数）的回调函数。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">array.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">currentValue, index, array</span>) &#123;</span><br><span class="line">  <span class="comment">// 执行某些操作</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>currentValue</code> 必选，表示当前正在处理的元素。</li>
+<li><code>index</code> 可选，表示当前正在处理的元素的索引，从 0 开始。</li>
+<li><code>array</code> 可选，调用数组本身。</li>
+</ul>
+<h3 id="listener"><a class="markdownIt-Anchor" href="#listener"></a> Listener</h3>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">item.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, [<span class="keyword">function</span>]);</span><br></pre></td></tr></table></figure></div>
+<p>向指定元素添加事件监听器，当事件（这里是点击）发生时，执行相应的回调函数。</p>
+<p><strong>常用的事件</strong></p>
+<ul>
+<li><code>DOMContentLoaded</code>：文档内容加载完成</li>
+<li><code>click</code></li>
+<li><code>mouseover</code></li>
+<li><code>keydown</code></li>
+</ul>
+<h3 id="classlist"><a class="markdownIt-Anchor" href="#classlist"></a> classList</h3>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">item.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;[class]&#x27;</span>);</span><br><span class="line">item.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;[class]&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
+<p>为当前元素添加/删除 <code>class</code></p>
+<h3 id="call"><a class="markdownIt-Anchor" href="#call"></a> call</h3>
+<p>了解 <code>call</code> 方法之前，先来了解一下 <code>this</code>。</p>
+<p>在JavaScript中，<code>this</code>关键字总是指向一个对象，通常是指向调用函数的那个对象。<code>this</code>的值在函数被调用时才会确定，并且其值取决于函数是如何被调用的。</p>
+<ol>
+<li><strong>全局函数</strong>：在全局函数中，<code>this</code>指向全局对象（在浏览器中是<code>window</code>）。</li>
+</ol>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 全局函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayGlobal</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">sayGlobal</span>(); <span class="comment">// 在浏览器中，控制台将显示window对象</span></span><br></pre></td></tr></table></figure></div>
+<ol start="2">
+<li><strong>对象的方法</strong>：当一个函数作为某个对象的方法被调用时，<code>this</code>指向该对象。</li>
+</ol>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建一个对象</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// 这里this指向person对象</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">sayName</span>(); <span class="comment">// 输出: Alice</span></span><br></pre></td></tr></table></figure></div>
+<ol start="3">
+<li><strong>构造函数</strong>：在构造函数中，<code>this</code>指向新创建的对象。</li>
+</ol>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Car</span>(<span class="params">make, model</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">make</span> = make;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">model</span> = model;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&#x27;Toyota&#x27;</span>, <span class="string">&#x27;Corolla&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myCar.<span class="property">make</span>); <span class="comment">// 输出: Toyota</span></span><br><span class="line"><span class="comment">// 在Car构造函数中，this指向新创建的myCar对象</span></span><br></pre></td></tr></table></figure></div>
+<p><code>new</code> 用于新建一个对象，后面调用构造函数。</p>
+<ol start="4">
+<li><strong>事件处理器</strong>：在事件处理器中，<code>this</code>指向触发事件的对象。</li>
+</ol>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">&lt;!-- <span class="variable constant_">HTML</span> --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;clickMe&quot;</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// JavaScript</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;clickMe&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 这里this指向被点击的button元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">alert</span>(<span class="string">&#x27;Button was clicked!&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+<ol start="5">
+<li><strong>箭头函数</strong></li>
+</ol>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Bob&#x27;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// 这里this指向person对象，而不是全局对象或window</span></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">greet</span>(); <span class="comment">// 一秒钟后输出: Bob</span></span><br></pre></td></tr></table></figure></div>
+<p><code>call</code>方法的作用是调用一个函数，并显式地设置函数体内的<code>this</code>对象，同时传递参数给这个函数。<code>call</code>方法的第一个参数是<code>this</code>的绑定对象，后面的参数是传递给函数的参数。</p>
+<p><strong>例如：</strong></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">introduce</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;My name is &quot;</span> + <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> animal = &#123; <span class="attr">name</span>: <span class="string">&quot;Dog&quot;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用call方法借用Person的introduce方法</span></span><br><span class="line"><span class="keyword">var</span> animalIntroduce = <span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">introduce</span>.<span class="title function_">call</span>(animal);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(animalIntroduce); <span class="comment">// 输出: My name is Dog</span></span><br></pre></td></tr></table></figure></div>
+<p>这里 <code>.call(animal)</code> 就改变了一个<strong>原型构造函数</strong>的 <code>this</code> 值为对象 <code>animal</code>，实现了方法的借用。</p>
+<p>其它的功能比如改变函数的调用上下文，实现继承等。</p>
+<p><strong>示例：</strong></p>
+<p>比如数组的一个方法 <code>filter</code>，想要作用于类数组对象上，可以这样写：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">[].<span class="property">filter</span>.<span class="title function_">call</span>(item.<span class="property">parentElement</span>.<span class="property">children</span>, <span class="function"><span class="params">el</span> =&gt;</span> el !== item)</span><br></pre></td></tr></table></figure></div>
+<p>这里 <code>item.parentElement.children</code> 返回的是元素 <code>item</code> 的父元素的所有子元素的集合，是一个类数组对象，为了对它进行 <code>filter</code> 的方法，可以利用 <code>call</code>，实现方法的借用，后面 <code>el =&gt; el !== item</code> 是原 <code>filter</code> 函数的参数，表示 <code>callback</code> 筛选条件。</p>
+<h3 id="toggle"><a class="markdownIt-Anchor" href="#toggle"></a> toggle</h3>
+<p>切换某元素的某个 <code>class</code> 的开关状态，若存在则移除它，若不存在则添加它。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">element.<span class="property">classList</span>.<span class="title function_">toggle</span>(<span class="string">&quot;changed&quot;</span>, [<span class="literal">true</span>/<span class="literal">false</span>]);</span><br></pre></td></tr></table></figure></div>
+<p>第二个参数可选，若 <code>true</code> 则强制添加，若 <code>false</code> 则强制删除。</p>
+]]></content>
+      <categories>
+        <category>Front-End</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim Note</title>
+    <url>/d32595a8.html</url>
+    <content><![CDATA[
+  <div class="note p-4 mb-4 rounded-small info">
+    <p>本文使用 Obsidian 的 Vim 模式写作。</p>
+
+  </div>
+<h2 id="什么是-vim"><a class="markdownIt-Anchor" href="#什么是-vim"></a> 什么是 Vim</h2>
+<blockquote>
+<p>Vim是一个类似于<a class="link"   href="https://baike.baidu.com/item/Vi/5043202?fromModule=lemma_inlink" >Vi <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>的高度可定制的<a class="link"   href="https://baike.baidu.com/item/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/8853160?fromModule=lemma_inlink" >文本编辑器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，在Vi的基础上改进和增加了很多特性。Vim是<a class="link"   href="https://baike.baidu.com/item/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6/405190?fromModule=lemma_inlink" >自由软件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。Vim普遍被推崇为类Vi编辑器中最好的一个，事实上真正的劲敌来自Emacs的不同变体。1999 年<a class="link"   href="https://baike.baidu.com/item/Emacs/0?fromModule=lemma_inlink" >Emacs <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>被选为Linuxworld文本编辑分类的优胜者，Vim屈居第二。但在2000年2月Vim赢得了<a class="link"   href="https://baike.baidu.com/item/Slashdot/1329225?fromModule=lemma_inlink" >Slashdot <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> Beanie的最佳<a class="link"   href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81/114160?fromModule=lemma_inlink" >开放源代码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>文本编辑器大奖，又将Emacs推至二线。</p>
+</blockquote>
+<p>最近在学 Linux，不可避免地需要使用 Vim 进行一些代码编辑（Linux 系统自带的文本编辑器）。</p>
+<p>感叹一下创造 Vim 的人的智慧。</p>
+<p>鼠标是什么东西，我不知道。</p>
+<p>码字效率++</p>
+<p><a class="link"   href="https://vim.nauxscript.com/" >一个比较不错的教程文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="界面移动"><a class="markdownIt-Anchor" href="#界面移动"></a> 界面/移动</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Key</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>h</code></td>
+<td style="text-align:center">Left</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>j</code></td>
+<td style="text-align:center">Down</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>k</code></td>
+<td style="text-align:center">UP</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>l</code></td>
+<td style="text-align:center">Right</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ctrl + y</code></td>
+<td style="text-align:center">上一行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ctrl + e</code></td>
+<td style="text-align:center">下一行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ctrl + u</code></td>
+<td style="text-align:center">上半页（up）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ctrl + d</code></td>
+<td style="text-align:center">下半页（down）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ctrl + b</code></td>
+<td style="text-align:center">上一页（back）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ctrl + f</code></td>
+<td style="text-align:center">下一页（forward）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>H</code></td>
+<td style="text-align:center">视口开头（Head）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>M</code></td>
+<td style="text-align:center">视口中央（Middle）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>L</code></td>
+<td style="text-align:center">视口结尾（Last）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>G（]]）</code></td>
+<td style="text-align:center">文件结尾</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>gg（[[）</code></td>
+<td style="text-align:center">文件开头</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>x + G</code></td>
+<td style="text-align:center">第 x 行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="跳转"><a class="markdownIt-Anchor" href="#跳转"></a> 跳转</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Key</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$</code></td>
+<td style="text-align:center">行尾</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>^</code></td>
+<td style="text-align:center">行首</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>0</code></td>
+<td style="text-align:center">行最开头</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>w</code></td>
+<td style="text-align:center">下一个单词的头部（word）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>e</code></td>
+<td style="text-align:center">下一个单词的尾部（end）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>b</code></td>
+<td style="text-align:center">上一个单词头部</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ge</code></td>
+<td style="text-align:center">上一个单词尾部</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>f + x</code></td>
+<td style="text-align:center">当前行向后查找字符 x（选择 x）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>3 + f + x</code></td>
+<td style="text-align:center">当前行向后查找第三个字符 x</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>F + x</code></td>
+<td style="text-align:center">当前行向前查找字符 x</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>t + x</code></td>
+<td style="text-align:center">当前行向后查找字符 x（选择 x 前一个字符）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>T + x</code></td>
+<td style="text-align:center">当前行向前查找字符 x（选择 x 后一个字符）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>（/）</code></td>
+<td style="text-align:center">当前句子的首/尾</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&#123;/&#125;</code></td>
+<td style="text-align:center">上/下一个空行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>%</code></td>
+<td style="text-align:center">配对的括号</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:center">跳转到与当前光标下单词匹配的下一个单词</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>#</code></td>
+<td style="text-align:center">跳转到与当前光标下单词匹配的上一个单词</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>g + t</code></td>
+<td style="text-align:center">下一个标签页</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>g + T</code></td>
+<td style="text-align:center">上一个标签页</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>x + g + t</code></td>
+<td style="text-align:center">第 x 个标签页</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文本操作"><a class="markdownIt-Anchor" href="#文本操作"></a> 文本操作</h2>
+<blockquote>
+<p>一般而言数字加对应操作即将该操作重复多少次。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Key</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>v</code></td>
+<td style="text-align:center">选择</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ctrl + v</code></td>
+<td style="text-align:center">块状选择</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>y</code></td>
+<td style="text-align:center">复制</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>yy（Y）</code></td>
+<td style="text-align:center">复制当前行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>p</code></td>
+<td style="text-align:center">粘贴（paste）到前面</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>P</code></td>
+<td style="text-align:center">粘贴到后面</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>x</code></td>
+<td style="text-align:center">删除（Backspace）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>X</code></td>
+<td style="text-align:center">删除（Delete）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;_x</code></td>
+<td style="text-align:center">删除，切不放入缓冲区</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>d + w</code></td>
+<td style="text-align:center">删除当前词</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>d + 3 + w</code></td>
+<td style="text-align:center">删除当前三个词</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>d + f + x</code></td>
+<td style="text-align:center">删到当前行的 x 处（包括 x）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>dd</code></td>
+<td style="text-align:center">删除当前行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>d + t + x</code></td>
+<td style="text-align:center">删到当前行的 x 前一个字符处（不包括 x）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>u</code></td>
+<td style="text-align:center">撤销（undo）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ctrl + r</code></td>
+<td style="text-align:center">重做</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>J</code></td>
+<td style="text-align:center">合并当前行及下一行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="输入"><a class="markdownIt-Anchor" href="#输入"></a> 输入</h2>
+<blockquote>
+<p>按下后进入输入模式。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Key</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>i</code></td>
+<td style="text-align:center">选择字符的前一位（insert）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>I</code></td>
+<td style="text-align:center">行首</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>a</code></td>
+<td style="text-align:center">选择字符的后一位（append）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>A</code></td>
+<td style="text-align:center">行尾</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>o</code></td>
+<td style="text-align:center">向下新建一行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>O</code></td>
+<td style="text-align:center">向上新建一行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>s</code></td>
+<td style="text-align:center">删除所选</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>S</code></td>
+<td style="text-align:center">删除当前行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>c + 2 + l</code></td>
+<td style="text-align:center">删除右边的两个字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>c + w</code></td>
+<td style="text-align:center">删除当前词的光标及其右部分</td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令"><a class="markdownIt-Anchor" href="#命令"></a> 命令</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Key</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>:q</code></td>
+<td style="text-align:center">退出</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:w</code></td>
+<td style="text-align:center">保存</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:wq</code></td>
+<td style="text-align:center">保存并退出</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/ + str</code></td>
+<td style="text-align:center">从当前位置向后搜索字符串 str</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>? + str</code></td>
+<td style="text-align:center">从当前位置向前搜索字符串 str</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>n</code></td>
+<td style="text-align:center">下一个</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>N</code></td>
+<td style="text-align:center">上一个</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:s/str1/str2/g</code>（<code>/</code> 分割或者 <code>#</code> 分割）</td>
+<td style="text-align:center">当前行的所有 str1 替换为 str2</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:%s/str1/str2/g</code></td>
+<td style="text-align:center">文件中所有的 str1 替换为 str2</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:10,20s/str1/str2/g</code></td>
+<td style="text-align:center">10 到 20 行所有的 str1 替换为 str2</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:.,+10s/str1/str2/g</code></td>
+<td style="text-align:center">当前行与接下来 10 行 所有的 str1 替换为 str2</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>.</code></td>
+<td style="text-align:center">重复上一个操作</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>~</code></td>
+<td style="text-align:center">切换所选字母的大小写</td>
+</tr>
+</tbody>
+</table>
+<p>替换的 <code>/g</code> 为<strong>替换标志</strong>，代表所有（global），可以为空，那么就是从光标开始的第一次出现。<code>/i</code> 表示不区分大小写，<code>/I</code> 表示区分大小写。<code>/c</code> 表示需要确认。这些可以自由组合，比如 <code>/gci</code>。</p>
+<h2 id="一图总结"><a class="markdownIt-Anchor" href="#一图总结"></a> 一图总结</h2>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202405181708942.webp"
+                      alt="|600" 
+                ></p>
+<h2 id="写在最后"><a class="markdownIt-Anchor" href="#写在最后"></a> 写在最后</h2>
+<p>用 Vim 写 Markdown 并且还是中文其实真的很鸡肋。</p>
+<p>中英输入法不断切换才能正常使用命令。</p>
+<p>总结了一些我初学 Vim 常用的命令。</p>
+<p>纸上得来终觉浅，绝知此事要躬行。</p>
+<p>看不懂的地方就试试，很好理解。</p>
+<p>希望对你有帮助。</p>
+<p>🔚</p>
+]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue Note</title>
+    <url>/9f08e17f.html</url>
+    <content><![CDATA[<blockquote>
+<p><a class="link"   href="https://cn.vuejs.org/" >Vue.js 中文文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<h2 id="api"><a class="markdownIt-Anchor" href="#api"></a> API</h2>
+<blockquote>
+<p>什么是 API ？</p>
+<p>API（<strong>Application Programming Interface</strong>，应用程序接口）是一组定义和协议，用于构建和集成软件应用程序。API 允许不同软件系统之间进行通信和数据交换。通过使用 API，开发者可以利用现有的功能，而无需从头开始编写代码。</p>
+</blockquote>
+<h2 id="响应式"><a class="markdownIt-Anchor" href="#响应式"></a> 响应式</h2>
+<p>响应式（reactivity）是指系统能够自动监测数据的变化并做出相应的反应。例如，当数据变化时，Vue 会自动重新渲染相关的 DOM 元素，以确保用户界面始终与数据保持同步。这种能力是 Vue 的核心特性之一，使得开发过程更加简洁和高效。</p>
+<h2 id="结构"><a class="markdownIt-Anchor" href="#结构"></a> 结构</h2>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;scirpt setup&gt;</span><br><span class="line">// JS</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">// HTML</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">// CSS</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></div>
+<p>每一个 <code>.vue</code> 文件是一个组件，不同的组件拼接成一个网页应用。</p>
+<p>里面有三部分，分别是我们熟悉的 <code>HTML CSS JS</code>。</p>
+<p>在之前的写法中，我们需要告诉 Vue 这是个组件以及定义组件逻辑的地方，如：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">	setup() &#123;</span><br><span class="line">	//</span><br><span class="line">	//</span><br><span class="line">	//</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+<p><code>setup</code> 用于初始化组件的逻辑、状态、数据，返回值将给模板使用。</p>
+<p>但在 Vue3 中，我们有更方便的定义数据和方法的方式：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">//</span><br><span class="line">//</span><br><span class="line">//</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+<p>这样的写法就方便许多。</p>
+<p>当我们想在某一个 <code>.vue</code> 文件中导入其它组件时，这样写：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123;name&#125; form &#x27;&#123;path&#125;&#x27;</span><br></pre></td></tr></table></figure></div>
+<p><code>&#123;name&#125;</code> 是组件的名字，可以任意取，<code>'&#123;path&#125;'</code> 是一个字符串，代表组件所在路径。</p>
+<p>使用时，在 <code>&lt;template&gt;</code> 中使用 <code>&lt;&#123;name&#125;&gt;&lt;/&#123;name&#125;&gt;</code> 即可，像是你自定义了一个新的 HTML 标签。</p>
+<p>当我们只想给 CSS 添加到当前组件时，可以给 <code>&lt;style&gt;</code> 添加一个属性 <code>scoped</code>。</p>
+<h2 id="variable"><a class="markdownIt-Anchor" href="#variable"></a> Variable</h2>
+<p>在 <code>script</code> 中，创建变量需要先引入 <code>ref/reactive</code> API。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; ref, reactive &#125; from &#x27;vue&#x27;</span><br></pre></td></tr></table></figure></div>
+<p>然后创建变量：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">const str = ref()</span><br></pre></td></tr></table></figure></div>
+<p><code>ref()</code> 内是变量值，可以是字符串、数组、数字、对象等等。</p>
+<p>返回的是一个带有 <code>value</code> 属性的对象。</p>
+<p>在 <code>script</code> 内访问变量值时，需要使用 <code>var.value</code>，而在 <code>template</code> 中访问变量值时，只需要 <code>var</code>，比如一个标题可以是 <code>&lt;h2&gt;&#123;&#123; str &#125;&#125;&lt;/h2&gt;</code>。这样标题的内容就可以随着变量的变化而变化。</p>
+<p><code>ref</code> 创建的是单一的<strong>值</strong>，而 <code>reactive</code> 创建的是更为复杂的深度响应式<strong>对象</strong>，里面有很多键值对。</p>
+<p>而由于返回的是一个对象，所以哪怕这个变量在定义时为 <code>const</code>，你依然可以修改它的 <code>value</code>。</p>
+<p>如果想要创建一个常量的话，可以使用 <code>ref(Object.freeze(&#123;value&#125;))</code></p>
+<p>也可以使用 <code>computed</code> API，它可以用于创建一个计算属性，计算属性的值会自动缓存，只有它里面的变量发生变化时才会重新计算，那么我们只需要让里面没有变量就可以实现返回一个常量。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">const computeValue = computed(() =&gt; &#x27;This is a computed constant&#x27;);</span><br></pre></td></tr></table></figure></div>
+<h2 id="动态绑定"><a class="markdownIt-Anchor" href="#动态绑定"></a> 动态绑定</h2>
+<p>动态绑定，在需要绑定的元素属性前加上冒号即可，属性值改为变量。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div :class=&quot;str&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
+<h2 id="监听器"><a class="markdownIt-Anchor" href="#监听器"></a> 监听器</h2>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; watch &#125; from &#x27;vue&#x27;;</span><br></pre></td></tr></table></figure></div>
+<p><code>watch()</code> 是一个方法，第一个参数是监听的变量，第二个参数是执行的函数。</p>
+<p>当这个变量的值发生变化时，函数就会执行一次。</p>
+<p>同时这个执行的函数可以传入两个参数，一个是监听得到的新值，另一个是旧值。</p>
+<p>当监听的元素为一个对象时，修改对象中的某一个值，并不会触发监听函数。</p>
+<p>如果想监听对象中的值，可以再加入一个参数：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">watch(object, add, &#123; deep: true &#125;)</span><br></pre></td></tr></table></figure></div>
+<p>一个对象 <code>&#123; deep: true &#125;</code>，此为深度监听。</p>
+<h2 id="defineprops"><a class="markdownIt-Anchor" href="#defineprops"></a> defineProps</h2>
+<p><code>defineProps</code> 是一个函数，用于声明当前组件接收的 props。它返回一个包含所有 props 的对象，可以在组件的逻辑中使用。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; defineProps &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const props = defineProps([&#x27;name&#x27;]);</span><br></pre></td></tr></table></figure></div>
+<p>函数的参数是一个字符串数组，里面的字符串就是可以接收的 props，可以让<strong>父组件</strong>（调用组件的组件）通过属性将属性值传递给<strong>子组件</strong>（被调用的组件）的 props 中。</p>
+<p>子组件调用这个值，通过 <code>&#123;&#123; props.name &#125;&#125;</code> 即可。</p>
+<p>举例：</p>
+<ul>
+<li>子组件：</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">...</span><br><span class="line">const props = defineProps([&#x27;text&#x27;]);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;h2&gt;&#123;&#123; props.text &#125;&#125;&lt;/h2&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>父组件：</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Mybutton text=&quot;Title&quot;&gt;&lt;/Mybutton&gt;</span><br></pre></td></tr></table></figure></div>
+<p>这样，父组件的数据就传递到子组件中了。</p>
+<h2 id="defineemits"><a class="markdownIt-Anchor" href="#defineemits"></a> defineEmits</h2>
+<p>在 Vue 3 中，<code>defineEmits</code> 是一个组合式 API，用于在组件中定义可以触发的事件。其参数是一个<strong>数组</strong>，包含了<strong>该组件可以触发的事件名称</strong>，返回值是一个函数，用于触发事件。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">const emit = defineEmits([&#x27;ok&#x27;]);</span><br></pre></td></tr></table></figure></div>
+<p>而 <code>emit</code> 函数的第一个参数表示触发的事件（这个事件必须是<strong>可触发</strong>的），后续参数表示传递给事件处理函数的数据。</p>
+<p>此时，就可以通过子组件中的一个定义的事件，向父组件中传递相应的数据。</p>
+<ul>
+<li>子组件：</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; defineProps, defineEmits &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const props = defineProps([&#x27;text&#x27;]);</span><br><span class="line"></span><br><span class="line">const emit = defineEmits([&#x27;ok&#x27;]);</span><br><span class="line"></span><br><span class="line">function send() &#123;</span><br><span class="line">  emit(&#x27;ok&#x27;, &#x27;hello&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div @click=&quot;send&quot; class=&quot;button&quot;&gt;&#123;&#123; props.text &#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.button &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  border-radius: 10px;</span><br><span class="line">  line-height: 50px;</span><br><span class="line">  background-color: aliceblue;</span><br><span class="line">  text-align: center;</span><br><span class="line">  margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>父组件：</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import Mybutton from &#x27;...&#x27;;</span><br><span class="line">...</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;Mybutton @ok=&quot;function&quot;&gt;&lt;/Mybutton&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
+<p>这样，当点击父组件中引用的子组件（按钮）时，就会触发子组件中的 <code>send()</code> 函数，从而触发 <code>ok</code> 事件，并像父组件中的 <code>function</code> 函数传递了 <code>hello</code> 的参数。</p>
+<h2 id="vue-指令"><a class="markdownIt-Anchor" href="#vue-指令"></a> Vue 指令</h2>
+<p>在 Vue.js 中，以 <code>v-</code> 开头的属性是 Vue 指令（directives）。指令是特殊的标记，添加在元素上的属性，用于在 DOM 上做特定的操作。</p>
+<h3 id="v-model"><a class="markdownIt-Anchor" href="#v-model"></a> v-model</h3>
+<p>在 <code>input</code> 标签中添加属性 <code>v-model=“var&quot;</code></p>
+<p>变量值与输入框内的值便是<strong>双向绑定</strong>的。</p>
+<p>即修改其中一个必然会影响另一个值。</p>
+<p>不仅仅文本输入框可以进行双向绑定，<code>checkbox</code> 也可以，需要将绑定的值设为布尔类型。</p>
+<h3 id="v-for"><a class="markdownIt-Anchor" href="#v-for"></a> v-for</h3>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div v-for=&quot;(i, index) in list&quot; :key=&quot;index&quot;&gt;</span><br></pre></td></tr></table></figure></div>
+<p>这里通过遍历 <code>list</code> 并且按照其中元素个数渲染多个 <code>div</code>，<code>i</code> 是形参，代表 <code>list</code> 中的值，<code>index</code> 表示数组下标。</p>
+<p><code>:key</code> 作用是提供唯一标识，防止渲染错误。</p>
+<h3 id="v-show"><a class="markdownIt-Anchor" href="#v-show"></a> v-show</h3>
+<p>控制一个元素是否显示，属性值为布尔值。</p>
+<h3 id="v-if"><a class="markdownIt-Anchor" href="#v-if"></a> v-if</h3>
+<p>与 <code>v-show</code> 用法相同，区别在于，如果元素不显示，不会创建这个元素，而 <code>v-show</code> 只是单纯利用 CSS 将元素进行隐藏。</p>
+]]></content>
+      <categories>
+        <category>Front-End</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS Note</title>
     <url>/d51d3626.html</url>
     <content><![CDATA[<h1 id="basic"><a class="markdownIt-Anchor" href="#basic"></a> Basic</h1>
@@ -431,1098 +1628,6 @@
       </categories>
       <tags>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++ Note</title>
-    <url>/edeb27c6.html</url>
-    <content><![CDATA[<h1 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h1>
-<h2 id="枚举类型"><a class="markdownIt-Anchor" href="#枚举类型"></a> 枚举类型</h2>
-<p>枚举 <code>enum</code> 是一种用户定义的类型，它由一组命名的整数常量组成。枚举类型的主要目的是提高代码的可读性和可维护性，特别是在处理一组相关的常量时。</p>
-<p><strong>示例</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">eDirection</span> &#123; STOP = <span class="number">0</span>, LEFT, RIGHT, UP, DOWN &#125;;</span><br><span class="line">eDirection dir;</span><br></pre></td></tr></table></figure></div>
-<p>这里就定义了一个枚举类型 <code>eDirection</code>，和这个类型的一个变量 <code>dir</code>，它只可以取其中这些常量的值。</p>
-<h1 id="库"><a class="markdownIt-Anchor" href="#库"></a> 库</h1>
-<h2 id="conioh"><a class="markdownIt-Anchor" href="#conioh"></a> conio.h</h2>
-<p><strong><code>_kbhit()</code></strong></p>
-<p>如果有键盘输入，则返回 1.</p>
-<p>否则返回 0.</p>
-<p>它是非阻塞的，这点与 <code>_getch()</code> 不同。</p>
-<p><strong><code>_getch()</code></strong></p>
-<p>从控制台中读取单个字符，不需要回车键。</p>
-<p>且读取的字符不会在控制台中显示。</p>
-]]></content>
-      <categories>
-        <category>Back-End</category>
-      </categories>
-      <tags>
-        <tag>cpp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/4a17b156.html</url>
-    <content><![CDATA[<h1 id="h1"><a class="markdownIt-Anchor" href="#h1"></a> H1</h1>
-<h2 id="h2"><a class="markdownIt-Anchor" href="#h2"></a> H2</h2>
-<h3 id="h3"><a class="markdownIt-Anchor" href="#h3"></a> H3</h3>
-<h4 id="h4"><a class="markdownIt-Anchor" href="#h4"></a> H4</h4>
-<h5 id="h5"><a class="markdownIt-Anchor" href="#h5"></a> H5</h5>
-<h6 id="h6"><a class="markdownIt-Anchor" href="#h6"></a> H6</h6>
-<p><strong>Bold</strong></p>
-<p><em>Italic</em></p>
-<p><s>remove</s></p>
-<p>text</p>
-<p><code>code inline</code></p>
-<pre class="mermaid">pie
-title P
-"1" : 10
-"2" : 10
-"3" : 50
-"4" : 30</pre>
-
-  <div class="note-large 信息">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>信息</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; PII;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">char</span> g[N][N];</span><br><span class="line"><span class="type">int</span> dist[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">-1</span>, <span class="built_in">sizeof</span>(dist));</span><br><span class="line">    queue&lt;PII&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[i][j] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dist[i][j] = <span class="number">0</span>;</span><br><span class="line">                q.<span class="built_in">push</span>(&#123;i, j&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> dx[] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> nx = t.x + dx[i];</span><br><span class="line">            <span class="type">int</span> ny = t.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(nx &lt; <span class="number">0</span> || nx &gt;= n || ny &lt; <span class="number">0</span> || ny &gt;= m) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[nx][ny] != <span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            dist[nx][ny] = dist[t.x][t.y] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(&#123;nx, ny&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, g[i]);</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, dist[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>a</mi><mo>−</mo><mi>b</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
-a + b &amp; = 2 \\
-&amp; = 1 \\
-&amp; = a - b \\
-\end{aligned}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a + b = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
-
-  <div class="note-large default">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <i class="notel-icon fa-solid fa-info"></i><p>信息</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note-large blue">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>提示</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note-large red">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>自定义标题</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small default">
-    <p>默认 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small default">
-    <p>default 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small primary">
-    <p>primary 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small success">
-    <p>success 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small info">
-    <p>info 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small warning">
-    <p>warning 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small danger">
-    <p>danger 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small red icon-padding">
-    <i class="note-icon fa-solid fa-bolt"></i><p>自定义提示块标签</p>
-
-  </div>
-<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Folding 测试： 点击查看更多 </summary>
-              <div class='content'>
-              <p>啊啊啊啊啊</p>  <div class="note p-4 mb-4 rounded-small danger">    <p>danger 提示块标签</p>  </div>  <div class="note p-4 mb-4 rounded-small tip">    <p>tip 提示块标签</p>  </div>
-              </div>
-            </details>
-<details class="red" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>title </summary>
-              <div class='content'>
-              <p>Yes.</p>
-              </div>
-            </details>
-<div class="tabs" id="tab-first-unique-name"><ul class="nav-tabs"><li class="tab active"><a class="#first-unique-name-1">First Tab</a></li><li class="tab"><a class="#first-unique-name-2">Second Tab</a></li><li class="tab"><a class="#first-unique-name-3">Third Tab</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p>
-<p>This is Tab 2.</p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p>
-<p>This is Tab 3.</p>
-<p>This is Tab 3.</p></div></div></div>
-<p>不设置任何参数的 <a class="button " href='/' title='按钮'>按钮</a> 适合融入段落中。</p>
-<p>regular 按钮适合独立于段落之外：</p>
-<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
-<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
-<p>large 按钮更具有强调作用，建议搭配 center 使用：</p>
-<a class="button  center large" href='https://redefine-docs.ohevan.com' title='开始使用'><i class='fa-solid fa-download'></i> 开始使用</a>
-]]></content>
-      <categories>
-        <category>world</category>
-      </categories>
-      <tags>
-        <tag>demo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim Note</title>
-    <url>/d32595a8.html</url>
-    <content><![CDATA[
-  <div class="note p-4 mb-4 rounded-small info">
-    <p>本文使用 Obsidian 的 Vim 模式写作。</p>
-
-  </div>
-<h2 id="什么是-vim"><a class="markdownIt-Anchor" href="#什么是-vim"></a> 什么是 Vim</h2>
-<blockquote>
-<p>Vim是一个类似于<a class="link"   href="https://baike.baidu.com/item/Vi/5043202?fromModule=lemma_inlink" >Vi <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>的高度可定制的<a class="link"   href="https://baike.baidu.com/item/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/8853160?fromModule=lemma_inlink" >文本编辑器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，在Vi的基础上改进和增加了很多特性。Vim是<a class="link"   href="https://baike.baidu.com/item/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6/405190?fromModule=lemma_inlink" >自由软件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。Vim普遍被推崇为类Vi编辑器中最好的一个，事实上真正的劲敌来自Emacs的不同变体。1999 年<a class="link"   href="https://baike.baidu.com/item/Emacs/0?fromModule=lemma_inlink" >Emacs <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>被选为Linuxworld文本编辑分类的优胜者，Vim屈居第二。但在2000年2月Vim赢得了<a class="link"   href="https://baike.baidu.com/item/Slashdot/1329225?fromModule=lemma_inlink" >Slashdot <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> Beanie的最佳<a class="link"   href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81/114160?fromModule=lemma_inlink" >开放源代码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>文本编辑器大奖，又将Emacs推至二线。</p>
-</blockquote>
-<p>最近在学 Linux，不可避免地需要使用 Vim 进行一些代码编辑（Linux 系统自带的文本编辑器）。</p>
-<p>感叹一下创造 Vim 的人的智慧。</p>
-<p>鼠标是什么东西，我不知道。</p>
-<p>码字效率++</p>
-<p><a class="link"   href="https://vim.nauxscript.com/" >一个比较不错的教程文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="界面移动"><a class="markdownIt-Anchor" href="#界面移动"></a> 界面/移动</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Key</th>
-<th style="text-align:center">Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>h</code></td>
-<td style="text-align:center">Left</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>j</code></td>
-<td style="text-align:center">Down</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>k</code></td>
-<td style="text-align:center">UP</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>l</code></td>
-<td style="text-align:center">Right</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ctrl + y</code></td>
-<td style="text-align:center">上一行</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ctrl + e</code></td>
-<td style="text-align:center">下一行</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ctrl + u</code></td>
-<td style="text-align:center">上半页（up）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ctrl + d</code></td>
-<td style="text-align:center">下半页（down）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ctrl + b</code></td>
-<td style="text-align:center">上一页（back）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ctrl + f</code></td>
-<td style="text-align:center">下一页（forward）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>H</code></td>
-<td style="text-align:center">视口开头（Head）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>M</code></td>
-<td style="text-align:center">视口中央（Middle）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>L</code></td>
-<td style="text-align:center">视口结尾（Last）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>G（]]）</code></td>
-<td style="text-align:center">文件结尾</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>gg（[[）</code></td>
-<td style="text-align:center">文件开头</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>x + G</code></td>
-<td style="text-align:center">第 x 行</td>
-</tr>
-</tbody>
-</table>
-<h2 id="跳转"><a class="markdownIt-Anchor" href="#跳转"></a> 跳转</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Key</th>
-<th style="text-align:center">Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>$</code></td>
-<td style="text-align:center">行尾</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>^</code></td>
-<td style="text-align:center">行首</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>0</code></td>
-<td style="text-align:center">行最开头</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>w</code></td>
-<td style="text-align:center">下一个单词的头部（word）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>e</code></td>
-<td style="text-align:center">下一个单词的尾部（end）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>b</code></td>
-<td style="text-align:center">上一个单词头部</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ge</code></td>
-<td style="text-align:center">上一个单词尾部</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>f + x</code></td>
-<td style="text-align:center">当前行向后查找字符 x（选择 x）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>3 + f + x</code></td>
-<td style="text-align:center">当前行向后查找第三个字符 x</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>F + x</code></td>
-<td style="text-align:center">当前行向前查找字符 x</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>t + x</code></td>
-<td style="text-align:center">当前行向后查找字符 x（选择 x 前一个字符）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>T + x</code></td>
-<td style="text-align:center">当前行向前查找字符 x（选择 x 后一个字符）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>（/）</code></td>
-<td style="text-align:center">当前句子的首/尾</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&#123;/&#125;</code></td>
-<td style="text-align:center">上/下一个空行</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>%</code></td>
-<td style="text-align:center">配对的括号</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>*</code></td>
-<td style="text-align:center">跳转到与当前光标下单词匹配的下一个单词</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>#</code></td>
-<td style="text-align:center">跳转到与当前光标下单词匹配的上一个单词</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>g + t</code></td>
-<td style="text-align:center">下一个标签页</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>g + T</code></td>
-<td style="text-align:center">上一个标签页</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>x + g + t</code></td>
-<td style="text-align:center">第 x 个标签页</td>
-</tr>
-</tbody>
-</table>
-<h2 id="文本操作"><a class="markdownIt-Anchor" href="#文本操作"></a> 文本操作</h2>
-<blockquote>
-<p>一般而言数字加对应操作即将该操作重复多少次。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Key</th>
-<th style="text-align:center">Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>v</code></td>
-<td style="text-align:center">选择</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ctrl + v</code></td>
-<td style="text-align:center">块状选择</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>y</code></td>
-<td style="text-align:center">复制</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>yy（Y）</code></td>
-<td style="text-align:center">复制当前行</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>p</code></td>
-<td style="text-align:center">粘贴（paste）到前面</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>P</code></td>
-<td style="text-align:center">粘贴到后面</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>x</code></td>
-<td style="text-align:center">删除（Backspace）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>X</code></td>
-<td style="text-align:center">删除（Delete）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&quot;_x</code></td>
-<td style="text-align:center">删除，切不放入缓冲区</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>d + w</code></td>
-<td style="text-align:center">删除当前词</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>d + 3 + w</code></td>
-<td style="text-align:center">删除当前三个词</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>d + f + x</code></td>
-<td style="text-align:center">删到当前行的 x 处（包括 x）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>dd</code></td>
-<td style="text-align:center">删除当前行</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>d + t + x</code></td>
-<td style="text-align:center">删到当前行的 x 前一个字符处（不包括 x）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>u</code></td>
-<td style="text-align:center">撤销（undo）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>ctrl + r</code></td>
-<td style="text-align:center">重做</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>J</code></td>
-<td style="text-align:center">合并当前行及下一行</td>
-</tr>
-</tbody>
-</table>
-<h2 id="输入"><a class="markdownIt-Anchor" href="#输入"></a> 输入</h2>
-<blockquote>
-<p>按下后进入输入模式。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Key</th>
-<th style="text-align:center">Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>i</code></td>
-<td style="text-align:center">选择字符的前一位（insert）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>I</code></td>
-<td style="text-align:center">行首</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>a</code></td>
-<td style="text-align:center">选择字符的后一位（append）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>A</code></td>
-<td style="text-align:center">行尾</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>o</code></td>
-<td style="text-align:center">向下新建一行</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>O</code></td>
-<td style="text-align:center">向上新建一行</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>s</code></td>
-<td style="text-align:center">删除所选</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>S</code></td>
-<td style="text-align:center">删除当前行</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>c + 2 + l</code></td>
-<td style="text-align:center">删除右边的两个字符</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>c + w</code></td>
-<td style="text-align:center">删除当前词的光标及其右部分</td>
-</tr>
-</tbody>
-</table>
-<h2 id="命令"><a class="markdownIt-Anchor" href="#命令"></a> 命令</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Key</th>
-<th style="text-align:center">Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>:q</code></td>
-<td style="text-align:center">退出</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>:w</code></td>
-<td style="text-align:center">保存</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>:wq</code></td>
-<td style="text-align:center">保存并退出</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>/ + str</code></td>
-<td style="text-align:center">从当前位置向后搜索字符串 str</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>? + str</code></td>
-<td style="text-align:center">从当前位置向前搜索字符串 str</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>n</code></td>
-<td style="text-align:center">下一个</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>N</code></td>
-<td style="text-align:center">上一个</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>:s/str1/str2/g</code>（<code>/</code> 分割或者 <code>#</code> 分割）</td>
-<td style="text-align:center">当前行的所有 str1 替换为 str2</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>:%s/str1/str2/g</code></td>
-<td style="text-align:center">文件中所有的 str1 替换为 str2</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>:10,20s/str1/str2/g</code></td>
-<td style="text-align:center">10 到 20 行所有的 str1 替换为 str2</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>:.,+10s/str1/str2/g</code></td>
-<td style="text-align:center">当前行与接下来 10 行 所有的 str1 替换为 str2</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>.</code></td>
-<td style="text-align:center">重复上一个操作</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>~</code></td>
-<td style="text-align:center">切换所选字母的大小写</td>
-</tr>
-</tbody>
-</table>
-<p>替换的 <code>/g</code> 为<strong>替换标志</strong>，代表所有（global），可以为空，那么就是从光标开始的第一次出现。<code>/i</code> 表示不区分大小写，<code>/I</code> 表示区分大小写。<code>/c</code> 表示需要确认。这些可以自由组合，比如 <code>/gci</code>。</p>
-<h2 id="一图总结"><a class="markdownIt-Anchor" href="#一图总结"></a> 一图总结</h2>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202405181708942.webp"
-                      alt="|600" 
-                ></p>
-<h2 id="写在最后"><a class="markdownIt-Anchor" href="#写在最后"></a> 写在最后</h2>
-<p>用 Vim 写 Markdown 并且还是中文其实真的很鸡肋。</p>
-<p>中英输入法不断切换才能正常使用命令。</p>
-<p>总结了一些我初学 Vim 常用的命令。</p>
-<p>纸上得来终觉浅，绝知此事要躬行。</p>
-<p>看不懂的地方就试试，很好理解。</p>
-<p>希望对你有帮助。</p>
-<p>🔚</p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript Note</title>
-    <url>/fbbf86b6.html</url>
-    <content><![CDATA[
-  <div class="note p-4 mb-4 rounded-small warning icon-padding">
-    <i class="note-icon fa-solid fa-hand-point-right"></i><p>本 <strong>Note</strong> 记录学习过程中遇到的一些问题，学到哪里便记到哪里，<strong>不适合作为系统学习的参考</strong>，持续更新。</p>
-
-  </div>
-<h1 id="basic"><a class="markdownIt-Anchor" href="#basic"></a> Basic</h1>
-<h2 id="变量和常量"><a class="markdownIt-Anchor" href="#变量和常量"></a> 变量和常量</h2>
-<p><code>var</code> 为全局作用域，可以理解为所有的 <code>var</code> 相当于都出现在文件开头，在全局内都有效。</p>
-<p><code>let</code> 为块级作用域。</p>
-<p>举个例子：</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a ,b);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">1</span></span><br></pre></td></tr></table></figure></div>
-<p>这段代码中，<code>b</code> 会报错，而 <code>a</code> 不会。</p>
-<p><code>const</code> 为常量，不可修改，需要在初始化时声明数值。。</p>
-<h2 id="对象"><a class="markdownIt-Anchor" href="#对象"></a> 对象</h2>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> ob = &#123;</span><br><span class="line">  [key]: [value],</span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure></div>
-<p>对象的 <code>key</code> 可以是字符串、非字符串（会转换为字符串），符号。</p>
-<p>通常对象的键不可以是函数，我们可以把函数转化为相应的字符串，或者使用 <code>Map</code> 数据结构。</p>
-<h2 id="数组"><a class="markdownIt-Anchor" href="#数组"></a> 数组</h2>
-<p>以创建一个长度为 <code>num</code> 且初始化全部是 0 为例子。</p>
-<h3 id="fill"><a class="markdownIt-Anchor" href="#fill"></a> fill</h3>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>; <span class="comment">// 假设数组长度为 10</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(num).<span class="title function_">fill</span>(<span class="number">0</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr); <span class="comment">// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span></span><br></pre></td></tr></table></figure></div>
-<h3 id="from"><a class="markdownIt-Anchor" href="#from"></a> from</h3>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>; <span class="comment">// 假设数组长度为 10</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123; <span class="attr">length</span>: num &#125;, <span class="function">() =&gt;</span> <span class="number">0</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr); <span class="comment">// [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span></span><br></pre></td></tr></table></figure></div>
-<p><code>Array.from()</code> 可以将一个类数组对象转化为数组，这个对象需要有 <code>length</code> 属性，否则数组长度将为 0</p>
-<p><strong>示例</strong></p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = &#123;<span class="number">1</span>: <span class="string">&#x27;1&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;haha&#x27;</span>, <span class="number">3</span>: <span class="number">3</span>, <span class="string">&#x27;length&#x27;</span>: <span class="number">10</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="title class_">Array</span>.<span class="title function_">from</span>(arr);</span><br></pre></td></tr></table></figure></div>
-<h3 id="for"><a class="markdownIt-Anchor" href="#for"></a> for</h3>
-<p>朴素的 <code>for</code> 循环，这里就不献丑了。</p>
-<h2 id="常用方法"><a class="markdownIt-Anchor" href="#常用方法"></a> 常用方法</h2>
-<h3 id="map"><a class="markdownIt-Anchor" href="#map"></a> map</h3>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> newArray = array.<span class="title function_">map</span>(<span class="title function_">callback</span>(currentValue[, index[, array]])[, thisArg])</span><br></pre></td></tr></table></figure></div>
-<p>该方法对数组中的每个元素调用一次函数，得到的返回值作为新的数组值，最后得到一个新数组。</p>
-<ul>
-<li><code>callback</code>：用于生成新数组元素的函数，接受三个参数：
-<ul>
-<li><code>currentValue</code>：当前正在处理的元素。</li>
-<li><code>index</code>（可选）：当前正在处理的元素的索引。</li>
-<li><code>array</code>（可选）：<code>map</code> 方法被调用的数组。</li>
-</ul>
-</li>
-<li><code>thisArg</code>（可选）：执行回调时用作 <code>this</code> 值的对象。</li>
-</ul>
-<p><strong>示例：</strong></p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用箭头函数作为回调函数</span></span><br><span class="line"><span class="keyword">const</span> doubled = numbers.<span class="title function_">map</span>(<span class="function"><span class="params">num</span> =&gt;</span> num * <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(doubled); <span class="comment">// 输出: [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure></div>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;Bob&quot;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;Charlie&quot;</span>, <span class="attr">age</span>: <span class="number">35</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userNames = users.<span class="title function_">map</span>(<span class="function"><span class="params">user</span> =&gt;</span> user.<span class="property">name</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(userNames); <span class="comment">// 输出: [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;]</span></span><br></pre></td></tr></table></figure></div>
-<h3 id="json"><a class="markdownIt-Anchor" href="#json"></a> JSON</h3>
-<p><strong><code>JSON.stringify()</code></strong></p>
-<p>将值转换为 JSON 字符串（通常传入对象或数组）。</p>
-<h3 id="filter"><a class="markdownIt-Anchor" href="#filter"></a> filter</h3>
-<p>用于数组，创建一个新数组。</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> newArray = array.<span class="title function_">filter</span>(<span class="title function_">callback</span>(element[, index[, array]])[, thisArg])</span><br></pre></td></tr></table></figure></div>
-<p>新数组将包含通过 <code>callback</code> 测试的元素。</p>
-<h2 id="function"><a class="markdownIt-Anchor" href="#function"></a> function</h2>
-<h3 id="简单声明"><a class="markdownIt-Anchor" href="#简单声明"></a> 简单声明</h3>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> 函数名(参数<span class="number">1</span>, 参数<span class="number">2</span>, ...) &#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">  <span class="comment">// 执行一些操作</span></span><br><span class="line">  <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p><strong>示例：</strong></p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">greet</span>(<span class="string">&quot;Alice&quot;</span>)); <span class="comment">// 输出: Hello, Alice!</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p>也可以赋值给一个变量：</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = <span class="keyword">function</span>(<span class="params">参数<span class="number">1</span>, 参数<span class="number">2</span>, ...</span>) &#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">  <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-<p><strong>示例：</strong></p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> greet = <span class="keyword">function</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">greet</span>(<span class="string">&quot;Bob&quot;</span>)); <span class="comment">// 输出: Hello, Bob!</span></span><br></pre></td></tr></table></figure></div>
-<p>也可以使用 ES6 引入的<strong>箭头函数</strong>：</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = <span class="function">(<span class="params">参数<span class="number">1</span>, 参数<span class="number">2</span>, ...</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">  <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-<p>如果只有一个表达式，那么可以进一步简化（省略 <code>return</code>）：</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 函数名 = <span class="function">(<span class="params">参数<span class="number">1</span>, 参数<span class="number">2</span>, ...</span>) =&gt;</span> 返回值;</span><br></pre></td></tr></table></figure></div>
-<p>箭头前是函数的形参，箭头后是函数体（返回值）。</p>
-<p><strong>示例：</strong></p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = (<span class="params">name</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 简化形式</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = name =&gt; <span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">greet</span>(<span class="string">&quot;Charlie&quot;</span>)); <span class="comment">// 输出: Hello, Charlie!</span></span><br></pre></td></tr></table></figure></div>
-<p>箭头函数只能被赋值给一个变量，或者作为其它表达式的一部分。</p>
-<h3 id="高阶函数"><a class="markdownIt-Anchor" href="#高阶函数"></a> 高阶函数</h3>
-<p>接受一个/多个函数作为参数，或者返回一个函数的函数。</p>
-<p><strong>示例：</strong></p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">createMultiplier</span> = multiplier =&gt; <span class="function"><span class="params">number</span> =&gt;</span> number * multiplier;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> double = <span class="title function_">createMultiplier</span>(<span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">double</span>(<span class="number">5</span>)); <span class="comment">// 输出: 10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> triple = <span class="title function_">createMultiplier</span>(<span class="number">3</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">triple</span>(<span class="number">5</span>)); <span class="comment">// 输出: 15</span></span><br></pre></td></tr></table></figure></div>
-<p><strong>解释</strong>：</p>
-<ul>
-<li><code>createMultiplier</code> 是一个高阶函数，它接受一个参数 <code>multiplier</code>。</li>
-<li>它返回一个新的箭头函数 <code>number =&gt; number * multiplier</code>。</li>
-<li>返回的函数接收一个参数 <code>number</code>，并返回 <code>number</code> 与 <code>multiplier</code> 的乘积。</li>
-</ul>
-<ol>
-<li>接受函数作为参数</li>
-</ol>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">isEven</span> = num =&gt; num % <span class="number">2</span> === <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> evenNumbers = numbers.<span class="title function_">filter</span>(isEven);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(evenNumbers); <span class="comment">// 输出: [2, 4]</span></span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><code>filter</code> 方法接受一个回调函数 <code>isEven</code>，该函数判断一个数是否为偶数。</li>
-<li><code>filter</code> 方法遍历 <code>numbers</code> 数组，并返回所有使回调函数返回 <code>true</code> 的元素组成的新数组。</li>
-</ul>
-<ol start="2">
-<li>一个简单的缓存函数</li>
-</ol>
-<p><strong>示例：</strong></p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">cacheFunction</span> = fn =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> cache = &#123;&#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> key = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(args);</span><br><span class="line">    <span class="keyword">if</span> (!cache[key]) &#123;</span><br><span class="line">      cache[key] = <span class="title function_">fn</span>(...args);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cache[key];</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; a + b;</span><br><span class="line"><span class="keyword">const</span> cachedAdd = <span class="title function_">cacheFunction</span>(add);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">cachedAdd</span>(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">// 输出: 3</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">cachedAdd</span>(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">// 输出: 3（从缓存中获取）</span></span><br></pre></td></tr></table></figure></div>
-<p>详细解释一下这个缓存函数：</p>
-<ul>
-<li><code>cacheFunction</code> 是一个高阶函数，接受一个函数 <code>fn</code> 作为参数。</li>
-<li><code>cache = &#123;&#125;</code> 是用来初始化一个空对象，用于存储函数的计算结果。这个对象的键是<strong>函数参数的字符串表示</strong>（通过剩余参数将所有参数存入一个数组中，然后将这个数组转化为 JSON 字符串，作为 <code>cache</code> 对象的键），值是函数执行的结果。</li>
-<li>它返回一个新的函数，该函数使用一个对象 <code>cache</code> 来存储计算结果。</li>
-<li>当调用返回的函数时，它会先检查 <code>cache</code> 中是否有结果，如果没有则计算并存储结果。</li>
-</ul>
-<h3 id="剩余参数"><a class="markdownIt-Anchor" href="#剩余参数"></a> 剩余参数</h3>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">...name</span><br></pre></td></tr></table></figure></div>
-<p>表示函数的可变参数，所有传入的参数收集到一个 <code>name</code> 数组中。</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">exampleFunction</span> = (<span class="params">...args</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(args);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">exampleFunction</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// 输出: [1, 2, 3]</span></span><br></pre></td></tr></table></figure></div>
-<p>如本例中的 <code>args</code> 数组就是 <code>[1, 2, 3]</code>。</p>
-<h3 id="函数提升"><a class="markdownIt-Anchor" href="#函数提升"></a> 函数提升</h3>
-<p>函数在声明之前可以被调用，但是函数表达式不可以。</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sayHello</span>()); <span class="comment">// 输出: Hello, World!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sayHello</span>()); <span class="comment">// 报错: sayHello is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sayHello = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-<h1 id="dom"><a class="markdownIt-Anchor" href="#dom"></a> DOM</h1>
-<h2 id="css-选择器的区别"><a class="markdownIt-Anchor" href="#css-选择器的区别"></a> CSS 选择器的区别</h2>
-<ol>
-<li>
-<p><strong><code>.container &gt; .panel</code></strong></p>
-<ul>
-<li>选择所有直接子元素 <code>.panel</code>，它们的父元素是 <code>.container</code>。</li>
-<li><strong>示例：</strong></li>
-</ul>
-</li>
-</ol>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>直接子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>不是直接子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-<p>仅选择第一个 <code>div.panel</code>，因为它是 <code>div.container</code> 的直接子元素。</p>
-<ol start="2">
-<li>
-<p><strong><code>.container .panel</code></strong></p>
-<ul>
-<li>选择所有后代元素 <code>.panel</code>，它们位于 <code>.container</code> 内部，无论层级如何。</li>
-<li><strong>示例：</strong></li>
-</ul>
-</li>
-</ol>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>直接子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>嵌套的子元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p>选择两个 <code>div.panel</code>，因为它们都是 <code>div.container</code> 的后代元素。</p>
-<ol start="3">
-<li>
-<p><strong><code>.container.panel</code></strong></p>
-<ul>
-<li>选择同时包含 <code>container</code> 和 <code>panel</code> 类的所有元素。</li>
-<li><strong>示例：</strong></li>
-</ul>
-</li>
-</ol>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container panel&quot;</span>&gt;</span></span><br><span class="line">  同时拥有 container 和 panel 类的元素</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span>单独拥有 panel 类的元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p>仅选择第一个 <code>div</code>，因为它同时拥有 <code>container</code> 和 <code>panel</code> 类。</p>
-<h2 id="function-2"><a class="markdownIt-Anchor" href="#function-2"></a> Function</h2>
-<h3 id="selector"><a class="markdownIt-Anchor" href="#selector"></a> Selector</h3>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(selectors);</span><br></pre></td></tr></table></figure></div>
-<p>返回的是匹配的第一个元素。</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(selectors);</span><br></pre></td></tr></table></figure></div>
-<p>返回的是一个 NodeList，是一种类数组对象，表示文档中的一组节点，储存<strong>匹配选择器</strong>的所有元素。</p>
-<p>不是数组，有 <code>length</code> 属性，可以通过索引访问其中的元素。</p>
-<h3 id="foreach"><a class="markdownIt-Anchor" href="#foreach"></a> forEach</h3>
-<p>遍历数组或类数组对象，对数组中的每个元素执行一次提供（参数）的回调函数。</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">array.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">currentValue, index, array</span>) &#123;</span><br><span class="line">  <span class="comment">// 执行某些操作</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><code>currentValue</code> 必选，表示当前正在处理的元素。</li>
-<li><code>index</code> 可选，表示当前正在处理的元素的索引，从 0 开始。</li>
-<li><code>array</code> 可选，调用数组本身。</li>
-</ul>
-<h3 id="listener"><a class="markdownIt-Anchor" href="#listener"></a> Listener</h3>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">item.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, [<span class="keyword">function</span>]);</span><br></pre></td></tr></table></figure></div>
-<p>向指定元素添加事件监听器，当事件（这里是点击）发生时，执行相应的回调函数。</p>
-<p><strong>常用的事件</strong></p>
-<ul>
-<li><code>DOMContentLoaded</code>：文档内容加载完成</li>
-<li><code>click</code></li>
-<li><code>mouseover</code></li>
-<li><code>keydown</code></li>
-</ul>
-<h3 id="classlist"><a class="markdownIt-Anchor" href="#classlist"></a> classList</h3>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">item.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;[class]&#x27;</span>);</span><br><span class="line">item.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;[class]&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
-<p>为当前元素添加/删除 <code>class</code></p>
-<h3 id="call"><a class="markdownIt-Anchor" href="#call"></a> call</h3>
-<p>了解 <code>call</code> 方法之前，先来了解一下 <code>this</code>。</p>
-<p>在JavaScript中，<code>this</code>关键字总是指向一个对象，通常是指向调用函数的那个对象。<code>this</code>的值在函数被调用时才会确定，并且其值取决于函数是如何被调用的。</p>
-<ol>
-<li><strong>全局函数</strong>：在全局函数中，<code>this</code>指向全局对象（在浏览器中是<code>window</code>）。</li>
-</ol>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 全局函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sayGlobal</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">sayGlobal</span>(); <span class="comment">// 在浏览器中，控制台将显示window对象</span></span><br></pre></td></tr></table></figure></div>
-<ol start="2">
-<li><strong>对象的方法</strong>：当一个函数作为某个对象的方法被调用时，<code>this</code>指向该对象。</li>
-</ol>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建一个对象</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">sayName</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// 这里this指向person对象</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">sayName</span>(); <span class="comment">// 输出: Alice</span></span><br></pre></td></tr></table></figure></div>
-<ol start="3">
-<li><strong>构造函数</strong>：在构造函数中，<code>this</code>指向新创建的对象。</li>
-</ol>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Car</span>(<span class="params">make, model</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">make</span> = make;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">model</span> = model;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&#x27;Toyota&#x27;</span>, <span class="string">&#x27;Corolla&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myCar.<span class="property">make</span>); <span class="comment">// 输出: Toyota</span></span><br><span class="line"><span class="comment">// 在Car构造函数中，this指向新创建的myCar对象</span></span><br></pre></td></tr></table></figure></div>
-<p><code>new</code> 用于新建一个对象，后面调用构造函数。</p>
-<ol start="4">
-<li><strong>事件处理器</strong>：在事件处理器中，<code>this</code>指向触发事件的对象。</li>
-</ol>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">&lt;!-- <span class="variable constant_">HTML</span> --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;clickMe&quot;</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// JavaScript</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;clickMe&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 这里this指向被点击的button元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">alert</span>(<span class="string">&#x27;Button was clicked!&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
-<ol start="5">
-<li><strong>箭头函数</strong></li>
-</ol>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Bob&#x27;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// 这里this指向person对象，而不是全局对象或window</span></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">greet</span>(); <span class="comment">// 一秒钟后输出: Bob</span></span><br></pre></td></tr></table></figure></div>
-<p><code>call</code>方法的作用是调用一个函数，并显式地设置函数体内的<code>this</code>对象，同时传递参数给这个函数。<code>call</code>方法的第一个参数是<code>this</code>的绑定对象，后面的参数是传递给函数的参数。</p>
-<p><strong>例如：</strong></p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">introduce</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;My name is &quot;</span> + <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> animal = &#123; <span class="attr">name</span>: <span class="string">&quot;Dog&quot;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用call方法借用Person的introduce方法</span></span><br><span class="line"><span class="keyword">var</span> animalIntroduce = <span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">introduce</span>.<span class="title function_">call</span>(animal);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(animalIntroduce); <span class="comment">// 输出: My name is Dog</span></span><br></pre></td></tr></table></figure></div>
-<p>这里 <code>.call(animal)</code> 就改变了一个<strong>原型构造函数</strong>的 <code>this</code> 值为对象 <code>animal</code>，实现了方法的借用。</p>
-<p>其它的功能比如改变函数的调用上下文，实现继承等。</p>
-<p><strong>示例：</strong></p>
-<p>比如数组的一个方法 <code>filter</code>，想要作用于类数组对象上，可以这样写：</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">[].<span class="property">filter</span>.<span class="title function_">call</span>(item.<span class="property">parentElement</span>.<span class="property">children</span>, <span class="function"><span class="params">el</span> =&gt;</span> el !== item)</span><br></pre></td></tr></table></figure></div>
-<p>这里 <code>item.parentElement.children</code> 返回的是元素 <code>item</code> 的父元素的所有子元素的集合，是一个类数组对象，为了对它进行 <code>filter</code> 的方法，可以利用 <code>call</code>，实现方法的借用，后面 <code>el =&gt; el !== item</code> 是原 <code>filter</code> 函数的参数，表示 <code>callback</code> 筛选条件。</p>
-<h3 id="toggle"><a class="markdownIt-Anchor" href="#toggle"></a> toggle</h3>
-<p>切换某元素的某个 <code>class</code> 的开关状态，若存在则移除它，若不存在则添加它。</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">element.<span class="property">classList</span>.<span class="title function_">toggle</span>(<span class="string">&quot;changed&quot;</span>, [<span class="literal">true</span>/<span class="literal">false</span>]);</span><br></pre></td></tr></table></figure></div>
-<p>第二个参数可选，若 <code>true</code> 则强制添加，若 <code>false</code> 则强制删除。</p>
-]]></content>
-      <categories>
-        <category>Front-End</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ChatGPT：开启个人成长的新纪元</title>
-    <url>/5a99080f.html</url>
-    <content><![CDATA[
-  <div class="note p-4 mb-4 rounded-small pink icon-padding">
-    <i class="note-icon fa-solid fa-lightbulb"></i><p>本文标题及封面均使用 ChatGPT 生成。</p>
-
-  </div>
-<h1 id="chatgpt-与个人能力"><a class="markdownIt-Anchor" href="#chatgpt-与个人能力"></a> ChatGPT 与个人能力</h1>
-<blockquote>
-<p>视频原地址：<a class="link"   href="https://www.bilibili.com/video/BV1th4y137yh/" >ChatGPT 是少数强者的【外挂】｜ChatGPT使用教程_哔哩哔哩_bilibili <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</blockquote>
-<h2 id="快速学习"><a class="markdownIt-Anchor" href="#快速学习"></a> 快速学习</h2>
-<blockquote>
-<p>你想做的事情，99.99% 别人都做过，而且做的比你好，你只需要搜到它，然后改良它。</p>
-</blockquote>
-<p>SECI 模型，即显性知识和隐形知识之间的相互转化。</p>
-<p>社会化、外在化、联结化、内在化。</p>
-<p>这里写一条我自己的感悟：只有显性知识才是能作为笔记的，隐形知识需要你上手去做。</p>
-<p><strong>搜索力</strong></p>
-<p>常用为 Bilibili，Google，Youtube，ChatGPT，sci-hub.</p>
-<p>并且 ChatGPT 可以把一个知识以 SECI 的三个阶段和学习力的三个层次有针对性地展开为你讲解，这是一般搜索引擎做不到的。</p>
-<p>强者的<strong>五大核心竞争力</strong>（使用工具的能力）。</p>
-<ul>
-<li>快速学习的能力（三个层次：有人手把手教，自己从书上学，探索未知）</li>
-<li>提问能力（高质量问题）</li>
-<li>批判性思考（苏格拉底提问）</li>
-<li>结构化思考（构建模型）</li>
-<li>创新（延续性创新）</li>
-</ul>
-<p>而想使用好 ChatGPT 这个工具，最需要的就是提问能力。</p>
-<h2 id="提问能力"><a class="markdownIt-Anchor" href="#提问能力"></a> 提问能力</h2>
-<blockquote>
-<p>最重要、最艰难的工作，从来不是找到对的答案，而是问出正确的问题。——彼得</p>
-</blockquote>
-<p><strong>我不擅长提问。</strong></p>
-<p>这里有一个<strong>布鲁姆教育目标分类模型</strong>，可以基于此进行提问。</p>
-<p>利用 Chat GPT 训练你的提问能力。</p>
-<p>你也可以向它提问如何更好地利用它，如何向它提问。</p>
-<p>你的问题质量越高、描述的越清楚、越详细，你得到的它的答案也就越详细越准确，越能得到你想要的信息。</p>
-<p>问题之间可以组合，但数量不宜过多。（因为它有字数限制）</p>
-<h2 id="批判性思考"><a class="markdownIt-Anchor" href="#批判性思考"></a> 批判性思考</h2>
-<blockquote>
-<p><strong>批判性思考本质上是思考观点背后的思考过程</strong></p>
-</blockquote>
-<p>任何<em>观点</em>，都是针对某个<em>论题</em>，基于特定的<em>概念</em>、<em>证据事实</em>和<em>假设</em>，站在特定的<em>立场</em>，进行<em>推理和解释</em>，从而支持某个<em>结论</em>。</p>
-<p>包括观点、论题、证据事实、结论、推理理解的过程、假设、概念、立场。</p>
-<p>可以问它观点的各个论证部分，也可以让它针对各个论证部分进行批判。</p>
-<p>最简单的批判方式就是批判概念。</p>
-<ul>
-<li><strong>苏格拉底提问方法</strong></li>
-<li><strong>基于结构化分析问题/创新的目的，让它为你提供一些批判句式</strong></li>
-<li><strong>结合论证谬误提问</strong></li>
-</ul>
-<p>这些就不详细展开了（可以问 GPT）。</p>
-<h2 id="结构化思考"><a class="markdownIt-Anchor" href="#结构化思考"></a> 结构化思考</h2>
-<p>学会 MECE 的分类方法（相互独立且完全穷尽）。</p>
-<p>把隐性的知识显性化。</p>
-<p>让⌈它⌋给你推荐不同结构的模型，并且教给你这些模型具体该怎么使用，有哪些局限，具体的例子有哪些，分析这个模型的应用场景和它的结构，并根据你的需求推荐相应的模型。</p>
-<h2 id="创新"><a class="markdownIt-Anchor" href="#创新"></a> 创新</h2>
-<p><em>颠覆性创新/延续性创新</em></p>
-<p>需要了解创新者的五个工具。</p>
-<p>对于一个问题，你可以让 ChatGPT 基于一个特定的思考结构进行发散。</p>
-<p>比如：让它扮演不同角色的人，站在不同的立场对一个问题进行讨论。</p>
-<p>比如：基于某种背景，让它预测未来的发展趋势。</p>
-<p>比如：给它一些需求，问它有没有好的解决办法。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>快速学习显性知识，通过提出高质量问题内化成自己批判性思考的能力、结构化思考能力，最终实现创新。</p>
-<h1 id="常用插件"><a class="markdownIt-Anchor" href="#常用插件"></a> 常用插件</h1>
-<p>以下是⌈它们⌋针对我“请介绍一下你自己的功能以及我该如何使用。”的问题作出的回答。</p>
-<h2 id="webpilot"><a class="markdownIt-Anchor" href="#webpilot"></a> WebPilot</h2>
-<p>你好，WebPilot 是一个强大的 ChatGPT 插件，专为增强您的在线浏览体验而设计。以下是 WebPilot 插件的详细功能以及使用方法：</p>
-<h3 id="功能介绍"><a class="markdownIt-Anchor" href="#功能介绍"></a> 功能介绍</h3>
-<ol>
-<li>
-<p><strong>网页内容总结</strong></p>
-<ul>
-<li>输入一个网页 URL，WebPilot 将提取网页内容并返回简明扼要的总结，帮助您快速了解网页的主要内容。</li>
-</ul>
-</li>
-<li>
-<p><strong>视频内容总结</strong></p>
-<ul>
-<li>输入一个 YouTube 视频的 URL，WebPilot 将分析视频内容并提供详细的总结，确保您无需观看完整视频即可掌握核心信息。</li>
-</ul>
-</li>
-<li>
-<p><strong>信息搜索和翻译</strong></p>
-<ul>
-<li>输入您的查询，WebPilot 将使用您设定的语言进行搜索，并返回相关信息。支持将查询转换为不同语言并提供多种资源链接。</li>
-</ul>
-</li>
-</ol>
-<h3 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法</h3>
-<ol>
-<li>
-<p><strong>网页内容总结</strong></p>
-<ul>
-<li>直接输入您要浏览的网页 URL。</li>
-<li>WebPilot 将分析该网页，并以项目符号的形式呈现关键点，最后提供一个主要结论。</li>
-</ul>
-</li>
-<li>
-<p><strong>视频内容总结</strong></p>
-<ul>
-<li>直接输入 YouTube 视频的 URL。</li>
-<li>WebPilot 将总结视频的主要内容，列出详细的要点，并提供一个关键结论。</li>
-</ul>
-</li>
-<li>
-<p><strong>信息搜索</strong></p>
-<ul>
-<li>提出您的查询问题，如“法国最好的餐厅在哪里？”。</li>
-<li>WebPilot 将搜索相关信息并以设定语言返回结果，同时提供多个资源链接供参考。</li>
-</ul>
-</li>
-</ol>
-<h3 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h3>
-<ul>
-<li>
-<p><strong>网页总结</strong></p>
-<ul>
-<li>输入：“<a class="link"   href="https://example.com" >https://example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>”</li>
-<li>返回：该网页的关键点总结和主要结论。</li>
-</ul>
-</li>
-<li>
-<p><strong>视频总结</strong></p>
-<ul>
-<li>输入：“<a class="link"   href="https://www.youtube.com/watch?v=example%E2%80%9D" >https://www.youtube.com/watch?v=example” <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>返回：该视频的详细要点总结和主要结论。</li>
-</ul>
-</li>
-<li>
-<p><strong>信息搜索</strong></p>
-<ul>
-<li>输入：“巴黎最佳景点？”</li>
-<li>返回：有关巴黎最佳景点的多种资源链接和总结信息。</li>
-</ul>
-</li>
-</ul>
-<h2 id="code-copilot"><a class="markdownIt-Anchor" href="#code-copilot"></a> Code Copilot</h2>
-<p>我是 Code Copilot，您的编程助手，旨在帮助您完成各种编程任务。以下是我的功能和使用指南：</p>
-<h3 id="功能"><a class="markdownIt-Anchor" href="#功能"></a> 功能</h3>
-<ol>
-<li><strong>代码编写</strong>：编写高效、可读、清晰且可维护的代码。</li>
-<li><strong>代码调试</strong>：分析和修复代码中的错误。</li>
-<li><strong>代码解释</strong>：逐步解释代码的工作原理。</li>
-<li><strong>代码审查</strong>：检查代码的功能，确保其无错误，并提供改进建议。</li>
-<li><strong>API 文档阅读</strong>：帮助解析和理解 API 文档。</li>
-<li><strong>实时搜索</strong>：执行实时搜索以检索最新数据或信息。</li>
-<li><strong>单元测试编写</strong>：编写单元测试以验证代码的功能。</li>
-</ol>
-<h3 id="使用指南"><a class="markdownIt-Anchor" href="#使用指南"></a> 使用指南</h3>
-<ol>
-<li><strong>指定语言</strong>：使用命令<code>/start(language?: string)</code>指定或输入您要使用的编程语言。</li>
-<li><strong>代码编写与调试</strong>：
-<ul>
-<li>粘贴您的代码、文档或描述具体的编码问题。</li>
-<li>使用命令<code>/quick_fix(any: string)</code>进行快速修复。</li>
-<li>使用命令<code>/fix(any: string)</code>进行详细的调试。</li>
-</ul>
-</li>
-<li><strong>代码解释与审查</strong>：
-<ul>
-<li>使用命令<code>/explain(any: string)</code>逐步解释代码。</li>
-<li>使用命令<code>/review(any: string)</code>审查代码并提供改进建议。</li>
-</ul>
-</li>
-<li><strong>API 文档阅读</strong>：提供 API 文档的链接，我将帮助解析和理解。
-<ul>
-<li>使用命令<code>/read(urls: string[])</code>读取网页内容。</li>
-</ul>
-</li>
-<li><strong>实时搜索</strong>：使用命令<code>/search(any: string)</code>执行实时搜索以检索最新信息。</li>
-</ol>
-<h3 id="具体步骤"><a class="markdownIt-Anchor" href="#具体步骤"></a> 具体步骤</h3>
-<ol>
-<li><strong>粘贴代码或文档</strong>：提供您当前的代码片段、文档或描述您遇到的问题。</li>
-<li><strong>选择合适的命令</strong>：根据您的需求选择上述命令之一。</li>
-<li><strong>获得帮助</strong>：查看我的响应，获取解决方案或进一步指导。</li>
-</ol>
-<h2 id="code-tutor"><a class="markdownIt-Anchor" href="#code-tutor"></a> Code Tutor</h2>
-<p>你好！我是一个名为Khanmigo Lite的AI学习助手，由Khan Academy与OpenAI合作开发，旨在帮助你学习编程和计算机科学。我可以帮助你理解编程概念，解决代码中的问题，以及指导你如何改进你的编程技能。</p>
-<p>你可以这样使用我：</p>
-<ol>
-<li><strong>代码问题</strong>：如果你在编写代码时遇到了问题，可以把代码粘贴过来，告诉我你卡在哪个部分。我会帮助你找到问题并指导你如何解决。</li>
-<li><strong>概念理解</strong>：如果你对某个编程概念不太理解，可以向我提问，我会帮助你理清思路。</li>
-<li><strong>算法设计</strong>：如果你需要设计一个算法或解决一个特定的问题，可以告诉我你的想法，我会引导你一步步完成。</li>
-</ol>
-<p>为了更好地帮助你，请把你的代码或问题详细描述一下，并告诉我你目前遇到的困难。我会根据你的描述，提供指导和建议。你准备好开始了吗？可以先上传你的作业或代码，让我们看看你正在处理什么问题。</p>
-<h2 id="scholar-gpt"><a class="markdownIt-Anchor" href="#scholar-gpt"></a> Scholar GPT</h2>
-<p>你好！我是Scholar GPT，你的多功能研究助手。我可以帮助你进行数据分析、学术研究、数学问题求解以及在线信息检索。以下是我的一些主要功能和使用方法：</p>
-<h3 id="1-数据分析与可视化"><a class="markdownIt-Anchor" href="#1-数据分析与可视化"></a> 1. 数据分析与可视化</h3>
-<p>我可以使用Python库（如Pandas、Matplotlib等）进行数据分析和可视化。如果你有数据集需要分析，可以将数据上传给我，我可以为你生成图表和统计报告。</p>
-<h3 id="2-学术研究"><a class="markdownIt-Anchor" href="#2-学术研究"></a> 2. 学术研究</h3>
-<p>我可以搜索和获取学术论文和研究文章的信息。你可以提供具体的研究主题或关键词，我会为你找到相关的学术资源，并提供引用和链接。</p>
-<h3 id="3-专利检索"><a class="markdownIt-Anchor" href="#3-专利检索"></a> 3. 专利检索</h3>
-<p>我可以帮助你检索专利信息。只需提供关键词和其他过滤条件（如国家、时间范围），我会找到相关的专利并提供详细信息。</p>
-<h3 id="4-数学问题求解"><a class="markdownIt-Anchor" href="#4-数学问题求解"></a> 4. 数学问题求解</h3>
-<p>我可以解决复杂的数学问题，包括符号运算和数值计算。如果你有特定的数学问题，请描述问题的详细内容，我会为你提供解答步骤和结果。</p>
-<h3 id="5-网页数据处理"><a class="markdownIt-Anchor" href="#5-网页数据处理"></a> 5. 网页数据处理</h3>
-<p>我可以从网页上提取和处理数据。如果你有特定的网址需要分析，可以提供链接，我会从中提取有用的信息。</p>
-<h3 id="6-自然语言处理"><a class="markdownIt-Anchor" href="#6-自然语言处理"></a> 6. 自然语言处理</h3>
-<p>我可以进行文本分析和情感分析等自然语言处理任务。如果你有文本需要分析，例如情感倾向分析或关键词提取，可以将文本提供给我。</p>
-<h3 id="使用示例"><a class="markdownIt-Anchor" href="#使用示例"></a> 使用示例</h3>
-<ol>
-<li><strong>数据分析</strong>：上传一个CSV文件，并告诉我你希望分析的内容。</li>
-<li><strong>学术研究</strong>：告诉我你感兴趣的研究主题，例如“机器学习在医学中的应用”，我会为你找到相关的学术文章。</li>
-<li><strong>专利检索</strong>：提供关键词和过滤条件，例如“人工智能专利在美国”，我会为你检索相关专利。</li>
-<li><strong>数学问题</strong>：描述你的数学问题，例如“求解微分方程y’’ + y = 0”，我会为你提供解答。</li>
-</ol>
-<h2 id="write-for-me"><a class="markdownIt-Anchor" href="#write-for-me"></a> Write For Me</h2>
-<p>当然！我是一个专门为内容创作和优化设计的聊天机器人，具备以下功能：</p>
-<ol>
-<li>
-<p><strong>理解用户需求</strong>：</p>
-<ul>
-<li>我会询问你的具体需求，包括使用目的、目标受众、语气、字数、风格和内容格式等，以确保我能提供最合适的内容。</li>
-</ul>
-</li>
-<li>
-<p><strong>创建内容大纲</strong>：</p>
-<ul>
-<li>根据你的要求，我首先会创建详细的大纲，将内容分成不同部分，并对每个部分进行总结，分配字数。</li>
-</ul>
-</li>
-<li>
-<p><strong>字数管理</strong>：</p>
-<ul>
-<li>我在写作过程中会时刻跟踪字数，确保符合你的要求，并在各部分之间进行平滑过渡。</li>
-</ul>
-</li>
-<li>
-<p><strong>创意扩展</strong>：</p>
-<ul>
-<li>我会使用各种策略来丰富内容，例如扩展讨论、加入要点和有趣的事实，同时保持内容的相关性和质量。</li>
-</ul>
-</li>
-<li>
-<p><strong>分段写作和交付</strong>：</p>
-<ul>
-<li>我会按部分逐步写作和交付内容，随时向你更新进度，并计划下一部分的内容。</li>
-</ul>
-</li>
-<li>
-<p><strong>内容质量</strong>：</p>
-<ul>
-<li>我会整合SEO策略，确保内容具有吸引力，适合目标受众和发布平台。</li>
-</ul>
-</li>
-<li>
-<p><strong>内容格式</strong>：</p>
-<ul>
-<li>默认格式为markdown，但我可以根据你的需求调整为任何格式。</li>
-</ul>
-</li>
-<li>
-<p><strong>延伸互动</strong>：</p>
-<ul>
-<li>对于复杂话题或长篇内容，我会提前告知需要多次回复，以确保整个内容的连贯性。</li>
-</ul>
-</li>
-<li>
-<p><strong>问题解决</strong>：</p>
-<ul>
-<li>我会以解决问题的心态来处理任务，旨在满足你的具体需求和挑战。</li>
-</ul>
-</li>
-</ol>
-<p>这些功能旨在为你提供高质量、定制化的内容创作服务。如果你有任何具体需求或问题，请随时告诉我！</p>
-<h2 id="translate-gpt"><a class="markdownIt-Anchor" href="#translate-gpt"></a> Translate GPT</h2>
-<p>这个没什么好说的。</p>
-<h2 id="image-generator"><a class="markdownIt-Anchor" href="#image-generator"></a> Image Generator</h2>
-<p>这是用它生成的一张科幻风格的宇宙插画。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202405212116475.webp"
-                      alt="DALL·E 2024-05-21 21.15.12 - A detailed sci-fi style illustration of the universe. The scene includes a vast expanse of space filled with colorful nebulae, distant galaxies, and b.webp" 
-                ></p>
-<p>还是很不错的。</p>
-<h2 id="总结-2"><a class="markdownIt-Anchor" href="#总结-2"></a> 总结</h2>
-<p>我们通过各种插件，能够使用 ChatGPT 联网了解到最新的信息，为不同领域的人提供垂直信息，增强了信息的准确度和专业性，查找论文、文档，总结视频等等。</p>
-<p>还有艺术创新类的工作，比如生成图片/视频/图标，这些都大大提高了我们的工作效率。</p>
-<p>我初次对 GPT-4 进行较为深入的体验，之前一直用的是 Bing 的 3.5 模型，感觉也不过如此，但现在确实被 GPT-4 的强大功能所震撼到。它能够节省很多我们在查找筛选整合信息的时间，通过它能锻炼我们提问、思考、内化的能力，未来，会使用工具是一个必不可少的能力。</p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>chatgpt</tag>
       </tags>
   </entry>
 </search>
