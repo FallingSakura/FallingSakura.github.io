@@ -622,154 +622,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/4a17b156.html</url>
-    <content><![CDATA[<h1 id="h1"><a class="markdownIt-Anchor" href="#h1"></a> H1</h1>
-<h2 id="h2"><a class="markdownIt-Anchor" href="#h2"></a> H2</h2>
-<h3 id="h3"><a class="markdownIt-Anchor" href="#h3"></a> H3</h3>
-<h4 id="h4"><a class="markdownIt-Anchor" href="#h4"></a> H4</h4>
-<h5 id="h5"><a class="markdownIt-Anchor" href="#h5"></a> H5</h5>
-<h6 id="h6"><a class="markdownIt-Anchor" href="#h6"></a> H6</h6>
-<p><strong>Bold</strong></p>
-<p><em>Italic</em></p>
-<p><s>remove</s></p>
-<p>text</p>
-<p><code>code inline</code></p>
-<pre class="mermaid">pie
-title P
-"1" : 10
-"2" : 10
-"3" : 50
-"4" : 30</pre>
-
-  <div class="note-large 信息">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>信息</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; PII;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">char</span> g[N][N];</span><br><span class="line"><span class="type">int</span> dist[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">-1</span>, <span class="built_in">sizeof</span>(dist));</span><br><span class="line">    queue&lt;PII&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[i][j] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dist[i][j] = <span class="number">0</span>;</span><br><span class="line">                q.<span class="built_in">push</span>(&#123;i, j&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> dx[] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> nx = t.x + dx[i];</span><br><span class="line">            <span class="type">int</span> ny = t.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(nx &lt; <span class="number">0</span> || nx &gt;= n || ny &lt; <span class="number">0</span> || ny &gt;= m) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[nx][ny] != <span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            dist[nx][ny] = dist[t.x][t.y] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(&#123;nx, ny&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, g[i]);</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, dist[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>a</mi><mo>−</mo><mi>b</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
-a + b &amp; = 2 \\
-&amp; = 1 \\
-&amp; = a - b \\
-\end{aligned}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a + b = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
-
-  <div class="note-large default">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <i class="notel-icon fa-solid fa-info"></i><p>信息</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note-large blue">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>提示</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note-large red">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>自定义标题</p>
-
-    </div>
-    <div class="notel-content">
-      <p>换行测试<br />
-换行测试<br />
-换行测试</p>
-
-    </div>
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small default">
-    <p>默认 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small default">
-    <p>default 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small primary">
-    <p>primary 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small success">
-    <p>success 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small info">
-    <p>info 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small warning">
-    <p>warning 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small danger">
-    <p>danger 提示块标签</p>
-
-  </div>
-
-  <div class="note p-4 mb-4 rounded-small red icon-padding">
-    <i class="note-icon fa-solid fa-bolt"></i><p>自定义提示块标签</p>
-
-  </div>
-<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Folding 测试： 点击查看更多 </summary>
-              <div class='content'>
-              <p>啊啊啊啊啊</p>  <div class="note p-4 mb-4 rounded-small danger">    <p>danger 提示块标签</p>  </div>  <div class="note p-4 mb-4 rounded-small tip">    <p>tip 提示块标签</p>  </div>
-              </div>
-            </details>
-<details class="red" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>title </summary>
-              <div class='content'>
-              <p>Yes.</p>
-              </div>
-            </details>
-<div class="tabs" id="tab-first-unique-name"><ul class="nav-tabs"><li class="tab active"><a class="#first-unique-name-1">First Tab</a></li><li class="tab"><a class="#first-unique-name-2">Second Tab</a></li><li class="tab"><a class="#first-unique-name-3">Third Tab</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p>
-<p>This is Tab 2.</p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p>
-<p>This is Tab 3.</p>
-<p>This is Tab 3.</p></div></div></div>
-<p>不设置任何参数的 <a class="button " href='/' title='按钮'>按钮</a> 适合融入段落中。</p>
-<p>regular 按钮适合独立于段落之外：</p>
-<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
-<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
-<p>large 按钮更具有强调作用，建议搭配 center 使用：</p>
-<a class="button  center large" href='https://redefine-docs.ohevan.com' title='开始使用'><i class='fa-solid fa-download'></i> 开始使用</a>
-]]></content>
-      <categories>
-        <category>world</category>
-      </categories>
-      <tags>
-        <tag>demo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ChatGPT：开启个人成长的新纪元</title>
     <url>/5a99080f.html</url>
     <content><![CDATA[
@@ -1064,6 +916,154 @@ a + b &amp; = 2 \\
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/4a17b156.html</url>
+    <content><![CDATA[<h1 id="h1"><a class="markdownIt-Anchor" href="#h1"></a> H1</h1>
+<h2 id="h2"><a class="markdownIt-Anchor" href="#h2"></a> H2</h2>
+<h3 id="h3"><a class="markdownIt-Anchor" href="#h3"></a> H3</h3>
+<h4 id="h4"><a class="markdownIt-Anchor" href="#h4"></a> H4</h4>
+<h5 id="h5"><a class="markdownIt-Anchor" href="#h5"></a> H5</h5>
+<h6 id="h6"><a class="markdownIt-Anchor" href="#h6"></a> H6</h6>
+<p><strong>Bold</strong></p>
+<p><em>Italic</em></p>
+<p><s>remove</s></p>
+<p>text</p>
+<p><code>code inline</code></p>
+<pre class="mermaid">pie
+title P
+"1" : 10
+"2" : 10
+"3" : 50
+"4" : 30</pre>
+
+  <div class="note-large 信息">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>信息</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; PII;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">char</span> g[N][N];</span><br><span class="line"><span class="type">int</span> dist[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">-1</span>, <span class="built_in">sizeof</span>(dist));</span><br><span class="line">    queue&lt;PII&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(g[i][j] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dist[i][j] = <span class="number">0</span>;</span><br><span class="line">                q.<span class="built_in">push</span>(&#123;i, j&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> dx[] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> nx = t.x + dx[i];</span><br><span class="line">            <span class="type">int</span> ny = t.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(nx &lt; <span class="number">0</span> || nx &gt;= n || ny &lt; <span class="number">0</span> || ny &gt;= m) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[nx][ny] != <span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            dist[nx][ny] = dist[t.x][t.y] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(&#123;nx, ny&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, g[i]);</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, dist[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>a</mi><mo>−</mo><mi>b</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+a + b &amp; = 2 \\
+&amp; = 1 \\
+&amp; = a - b \\
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a + b = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
+
+  <div class="note-large default">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <i class="notel-icon fa-solid fa-info"></i><p>信息</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note-large blue">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>提示</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>自定义标题</p>
+
+    </div>
+    <div class="notel-content">
+      <p>换行测试<br />
+换行测试<br />
+换行测试</p>
+
+    </div>
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small default">
+    <p>默认 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small default">
+    <p>default 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small primary">
+    <p>primary 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small success">
+    <p>success 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small info">
+    <p>info 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small warning">
+    <p>warning 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small danger">
+    <p>danger 提示块标签</p>
+
+  </div>
+
+  <div class="note p-4 mb-4 rounded-small red icon-padding">
+    <i class="note-icon fa-solid fa-bolt"></i><p>自定义提示块标签</p>
+
+  </div>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Folding 测试： 点击查看更多 </summary>
+              <div class='content'>
+              <p>啊啊啊啊啊</p>  <div class="note p-4 mb-4 rounded-small danger">    <p>danger 提示块标签</p>  </div>  <div class="note p-4 mb-4 rounded-small tip">    <p>tip 提示块标签</p>  </div>
+              </div>
+            </details>
+<details class="red" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>title </summary>
+              <div class='content'>
+              <p>Yes.</p>
+              </div>
+            </details>
+<div class="tabs" id="tab-first-unique-name"><ul class="nav-tabs"><li class="tab active"><a class="#first-unique-name-1">First Tab</a></li><li class="tab"><a class="#first-unique-name-2">Second Tab</a></li><li class="tab"><a class="#first-unique-name-3">Third Tab</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p>
+<p>This is Tab 2.</p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p>
+<p>This is Tab 3.</p>
+<p>This is Tab 3.</p></div></div></div>
+<p>不设置任何参数的 <a class="button " href='/' title='按钮'>按钮</a> 适合融入段落中。</p>
+<p>regular 按钮适合独立于段落之外：</p>
+<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
+<a class="button  regular" href='https://www.ohevan.com' title='示例博客'><i class='fa-solid fa-play-circle'></i> 示例博客</a>
+<p>large 按钮更具有强调作用，建议搭配 center 使用：</p>
+<a class="button  center large" href='https://redefine-docs.ohevan.com' title='开始使用'><i class='fa-solid fa-download'></i> 开始使用</a>
+]]></content>
+      <categories>
+        <category>world</category>
+      </categories>
+      <tags>
+        <tag>demo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Implementing Vue Reactivity Using Javascript</title>
     <url>/57511a32.html</url>
     <content><![CDATA[<p>代码思路：</p>
@@ -1072,8 +1072,12 @@ a + b &amp; = 2 \\
 <p>最后解析整个页面模板，为所有的引用变量的地方创建一个 Watcher，然后把它加到对应的 Dep 中，一个变量对应一个 Dep 但是一个变量可以被多次引用，每一个引用都是一个 Watcher，这样在一个 Watcher 改变时，它的 setter 就会触发它所在的 Dep 的更新。</p>
 <p>中间对于数据的替换和更新用到了一系列的字符串操作和正则表达式。</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Watcher</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">vm, key, callback</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">vm</span> = vm;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">key</span> = key;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">callback</span> = callback;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// target 在使用时不需要显式声明</span></span><br><span class="line">    <span class="title class_">Dep</span>.<span class="property">target</span> = <span class="variable language_">this</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">oldValue</span> = vm[key];</span><br><span class="line">    <span class="comment">// 激活 getter，将这个值的 Watcher 添加到它所在对象的 Sub</span></span><br><span class="line">    <span class="title class_">Dep</span>.<span class="property">target</span> = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// 重置 target</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">update</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> newValue = <span class="variable language_">this</span>.<span class="property">vm</span>[<span class="variable language_">this</span>.<span class="property">key</span>];</span><br><span class="line">    <span class="keyword">if</span> (newValue === <span class="variable language_">this</span>.<span class="property">oldValue</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">callback</span>(newValue);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">oldValue</span> = newValue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Compile</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">vm</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">vm</span> = vm;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">el</span> = vm.<span class="property">$el</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">compile</span>(<span class="variable language_">this</span>.<span class="property">el</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">compile</span>(<span class="params">el</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> childNodes = el.<span class="property">childNodes</span>;</span><br><span class="line">    <span class="title class_">Array</span>.<span class="title function_">from</span>(childNodes).<span class="title function_">forEach</span>(<span class="function">(<span class="params">node</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (node.<span class="property">nodeType</span> === <span class="number">3</span>) &#123; <span class="comment">// text</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">compileText</span>(node);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.<span class="property">nodeType</span> === <span class="number">1</span>) &#123; <span class="comment">// element</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">compileElement</span>(node);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 还有子节点</span></span><br><span class="line">      <span class="keyword">if</span> (node.<span class="property">childNodes</span> &amp;&amp; node.<span class="property">childNodes</span>.<span class="property">length</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">compile</span>(node);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">compileElement</span>(<span class="params">node</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> reg = <span class="regexp">/^v-([\w-]+)$/</span>;</span><br><span class="line">    <span class="keyword">const</span> regx = <span class="regexp">/:([\w-]+)=&quot;([^&quot;]+)&quot;/</span>;</span><br><span class="line">    <span class="title class_">Array</span>.<span class="title function_">from</span>(node.<span class="property">attributes</span>).<span class="title function_">forEach</span>(<span class="function">(<span class="params">attr</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> match = regx.<span class="title function_">exec</span>(<span class="string">`<span class="subst">$&#123;attr.name&#125;</span>=&quot;<span class="subst">$&#123;attr.value&#125;</span>&quot;`</span>);</span><br><span class="line">      <span class="keyword">if</span> (match) &#123;</span><br><span class="line">        <span class="keyword">const</span> name = match[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">const</span> value = match[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Watcher</span>(<span class="variable language_">this</span>.<span class="property">vm</span>, value, <span class="function">(<span class="params">newValue</span>) =&gt;</span> &#123;</span><br><span class="line">          node.<span class="title function_">setAttribute</span>(name, newValue);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((match = reg.<span class="title function_">exec</span>(attr.<span class="property">name</span>))) &#123;</span><br><span class="line">        <span class="keyword">const</span> opName = match[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">const</span> value = attr.<span class="property">value</span>; <span class="comment">// string</span></span><br><span class="line">        <span class="comment">// ( _ ) 捕获从 1 下标开始</span></span><br><span class="line">        <span class="keyword">switch</span> (opName) &#123;</span><br><span class="line">          <span class="keyword">case</span> <span class="string">&quot;model&quot;</span>:</span><br><span class="line">            node.<span class="property">value</span> = <span class="variable language_">this</span>.<span class="property">vm</span>[value];</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">Watcher</span>(<span class="variable language_">this</span>.<span class="property">vm</span>, value, <span class="function">(<span class="params">newValue</span>) =&gt;</span> &#123;</span><br><span class="line">              node.<span class="property">value</span> = newValue;</span><br><span class="line">            &#125;);</span><br><span class="line">            node.<span class="title function_">addEventListener</span>(<span class="string">&quot;input&quot;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">              <span class="variable language_">this</span>.<span class="property">vm</span>[value] = event.<span class="property">target</span>.<span class="property">value</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="string">&quot;if&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="string">&quot;on&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="string">&quot;else&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="string">&quot;else-if&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="string">&quot;show&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="string">&quot;for&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">compileText</span>(<span class="params">node</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> reg = <span class="regexp">/\&#123;\&#123;(.+?)\&#125;\&#125;/g</span>;</span><br><span class="line">    <span class="comment">// const value = node.textContent.replace(/\s/g, &#x27;&#x27;);</span></span><br><span class="line">    <span class="keyword">const</span> value = node.<span class="property">textContent</span>;</span><br><span class="line">    <span class="keyword">const</span> tokens = [];</span><br><span class="line">    <span class="keyword">let</span> result,</span><br><span class="line">      index,</span><br><span class="line">      lastIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> ((result = reg.<span class="title function_">exec</span>(value))) &#123;</span><br><span class="line">      index = result.<span class="property">index</span>;</span><br><span class="line">      <span class="keyword">if</span> (index &gt; lastIndex) &#123;</span><br><span class="line">        tokens.<span class="title function_">push</span>(value.<span class="title function_">slice</span>(lastIndex, index));</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">const</span> key = result[<span class="number">1</span>].<span class="title function_">trim</span>();</span><br><span class="line">      tokens.<span class="title function_">push</span>(<span class="variable language_">this</span>.<span class="property">vm</span>[key]);</span><br><span class="line">      lastIndex = index + result[<span class="number">0</span>].<span class="property">length</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> pos = tokens.<span class="property">length</span> - <span class="number">1</span>;</span><br><span class="line">      <span class="comment">// update</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">new</span> <span class="title class_">Watcher</span>(<span class="variable language_">this</span>.<span class="property">vm</span>, key, <span class="function">(<span class="params">newValue</span>) =&gt;</span> &#123;</span><br><span class="line">        tokens[pos] = newValue;</span><br><span class="line">        node.<span class="property">textContent</span> = tokens.<span class="title function_">join</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (lastIndex &lt; value.<span class="property">length</span>) &#123;</span><br><span class="line">      tokens.<span class="title function_">push</span>(value.<span class="title function_">slice</span>(lastIndex));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (tokens.<span class="property">length</span>) &#123;</span><br><span class="line">      node.<span class="property">textContent</span> = tokens.<span class="title function_">join</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dep</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span> = []; <span class="comment">// watchers</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addSub</span>(<span class="params">sub</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">push</span>(sub);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">notify</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">sub</span>) =&gt;</span> sub.<span class="title function_">update</span>());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Observer</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">data</span> = data;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">walk</span>(data);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">walk</span>(<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="title class_">Object</span>.<span class="title function_">keys</span>(data).<span class="title function_">forEach</span>(<span class="function">(<span class="params">key</span>) =&gt;</span> <span class="title function_">defineProperty</span>(data, key, data[key]));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 为每个属性值添加 getter 和 setter，这是响应式的基础</span></span><br><span class="line"><span class="comment">// 同时为每个对象添加一个 dep</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">defineProperty</span>(<span class="params">data, key, value</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> dep = <span class="keyword">new</span> <span class="title class_">Dep</span>();</span><br><span class="line">  <span class="comment">// is a object</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> value === <span class="title class_">Object</span> &amp;&amp; value !== <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Observer</span>(value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(data, key, &#123;</span><br><span class="line">    <span class="attr">enumerable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">configurable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="title class_">Dep</span>.<span class="property">target</span> &amp;&amp; dep.<span class="title function_">addSub</span>(<span class="title class_">Dep</span>.<span class="property">target</span>); <span class="comment">// Watcher initualize</span></span><br><span class="line">      <span class="keyword">return</span> value;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">newValue</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (value === newValue) <span class="keyword">return</span>;</span><br><span class="line">      value = newValue;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> value === <span class="title class_">Object</span> &amp;&amp; value !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Observer</span>(value);</span><br><span class="line">        <span class="comment">// 如果更改的值是一个对象，也要对每个对象的值进行观察初始化</span></span><br><span class="line">      &#125;</span><br><span class="line">      dep.<span class="title function_">notify</span>();</span><br><span class="line">      <span class="comment">// 触发每一个 Sub 的更新。</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Vue</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">options</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">$options</span> = options || &#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">$data</span> = options.<span class="property">data</span> || &#123;&#125;;</span><br><span class="line">    <span class="keyword">const</span> el = options.<span class="property">el</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">$el</span> = <span class="keyword">typeof</span> el === <span class="string">&quot;string&quot;</span> ? <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(el) : el;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 注入</span></span><br><span class="line">    <span class="title function_">proxy</span>(<span class="variable language_">this</span>, <span class="variable language_">this</span>.<span class="property">$data</span>);</span><br><span class="line">    <span class="comment">// vm.$data.prop -&gt; vm.prop</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 观察</span></span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Observer</span>(<span class="variable language_">this</span>.<span class="property">$data</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 模板分析</span></span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Compile</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="comment">// 找到一开始需要响应式的位置</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">proxy</span>(<span class="params">target, data</span>) &#123;</span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">keys</span>(data).<span class="title function_">forEach</span>(<span class="function">(<span class="params">key</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(target, key, &#123;</span><br><span class="line">      <span class="attr">enumerable</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">configurable</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> data[key];</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="title function_">set</span>(<span class="params">newValue</span>) &#123;</span><br><span class="line">        data[key] = newValue;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>Front-End</category>
+      </categories>
       <tags>
         <tag>javascript</tag>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
